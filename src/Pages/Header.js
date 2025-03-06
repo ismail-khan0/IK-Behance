@@ -86,7 +86,7 @@ export default function Header() {
             className="flex items-center space-x-1 hover:text-black font-bold h-5"
           >
             <span>Behance</span>
-            <span className="inline-flex items-center bg-gradient-to-r from-blue-500 to-blue-700 text-black text-xs font-bold px-1 py-[2px] rounded-md">
+            <span className="inline-flex items-center bg-gradient-to-r from-blue-500 to-blue-700 text-white text-xs font-bold px-1 py-[2px] rounded-md">
     PRO
   </span>
           </Link>
@@ -183,7 +183,7 @@ export default function Header() {
         </Link>
         <Link
           to="/auth"
-          className="px-4 py-1 items-center text-black bg-blue-600 hover:bg-blue-700 border rounded-full"
+          className="px-4 py-1 items-center text-white bg-blue-600 hover:bg-blue-700 border rounded-full"
         >
           Sign Up
         </Link>

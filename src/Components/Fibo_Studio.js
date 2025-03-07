@@ -85,60 +85,66 @@ export default function Fibo_Studio() {
         <Videos videos="https://player.vimeo.com/video/1049214649?autoplay=1&loop=1&background=1" className="w-full pb-[10.40%] aspect-video" />
         
         <div className="bg-black text-white p-6 flex flex-col items-center text-center space-y-4">
-          <p>
-            Need a little assistance?{" "}
-            <a
-              href="#"
-              className="relative text-orange-400 before:absolute before:left-0 before:bottom-0 before:h-[2px] before:w-full before:bg-gray-400 before:transition-all before:duration-300 hover:before:bg-orange-400"
-            >
-              Book a FREE consultation
-            </a>
-          </p>
-          
-          <div className="flex space-x-2 text-green-400">
-            <a href="#">LinkedIn</a>
-            <span className="text-white">•</span>
-            <a href="#">Dribbble</a>
-            <span className="text-white">•</span>
-            <a href="#">Facebook</a>
-            <span className="text-white">•</span>
-            <a href="#">Instagram</a>
-            <span className="text-white">•</span>
-            <a href="#">Threads</a>
-            <span className="text-white">•</span>
-            <a href="#">WhatsApp</a>
-          </div>
+  <p className="text-sm sm:text-base">
+    Need a little assistance?{" "}
+    <a
+      href="#"
+      className="relative text-orange-400 before:absolute before:left-0 before:bottom-0 before:h-[2px] before:w-full before:bg-gray-400 before:transition-all before:duration-300 hover:before:bg-orange-400"
+    >
+      Book a FREE consultation
+    </a>
+  </p>
 
-          <div className="flex flex-col items-center space-y-1">
-            <p className="flex items-center space-x-2">
-              <span>📩</span> 
-              <a
-                href="mailto:hello@fibostudio.com"
-                className="relative text-blue-400 before:absolute before:left-0 before:bottom-0 before:h-[2px] before:w-full before:bg-gray-500 before:transition-all before:duration-300 hover:before:bg-gray-200"
-              >
-                ik8323253@gmail.com
-              </a>
-            </p>
-            <p className="flex items-center space-x-2">
-              <span>🌍</span> 
-              <a href="https://www.fibostudio.com" className="relative text-blue-400 before:absolute before:left-0 before:bottom-0 before:h-[2px] before:w-full before:bg-gray-500 before:transition-all before:duration-300 hover:before:bg-gray-500">
-                www.ik-behance.com
-              </a>
-            </p>
-          </div>
+  {/* Social Media Links */}
+  <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 text-green-400">
+    <a href="#">LinkedIn</a>
+    <span className="hidden sm:inline text-white">•</span>
+    <a href="#">Dribbble</a>
+    <span className="hidden sm:inline text-white">•</span>
+    <a href="#">Facebook</a>
+    <span className="hidden sm:inline text-white">•</span>
+    <a href="#">Instagram</a>
+    <span className="hidden sm:inline text-white">•</span>
+    <a href="#">Threads</a>
+    <span className="hidden sm:inline text-white">•</span>
+    <a href="#">WhatsApp</a>
+  </div>
 
-          <div className="flex flex-col items-center space-y-2 mt-4">
-            <div className="bg-blue-700 p-3 rounded-full mt-16 text-2xl">
-              <BiLike />
-            </div>
-            <h2 className="font-bold text-lg">
-              Fudo - Food Share App Reducing Food Waste | Fibo Studio
-            </h2>
-            <p className="text-gray-400 text-sm">👍 292 👁️ 1K 💬 125</p>
-            <p className="text-gray-500 text-xs">Published: January 23rd 2025</p>
-          </div>
-          
-        </div>
+  {/* Contact Section */}
+  <div className="flex flex-col items-center space-y-1 sm:space-y-2">
+    <p className="flex items-center space-x-2 text-sm sm:text-base">
+      <span>📩</span>
+      <a
+        href="mailto:ik8323253@gmail.com"
+        className="relative text-blue-400 before:absolute before:left-0 before:bottom-0 before:h-[2px] before:w-full before:bg-gray-500 before:transition-all before:duration-300 hover:before:bg-gray-200"
+      >
+        ik8323253@gmail.com
+      </a>
+    </p>
+    <p className="flex items-center space-x-2 text-sm sm:text-base">
+      <span>🌍</span>
+      <a
+        href="https://www.ik-behance.com"
+        className="relative text-blue-400 before:absolute before:left-0 before:bottom-0 before:h-[2px] before:w-full before:bg-gray-500 before:transition-all before:duration-300 hover:before:bg-gray-500"
+      >
+        www.ik-behance.com
+      </a>
+    </p>
+  </div>
+
+  {/* Project Showcase */}
+  <div className="flex flex-col items-center space-y-2 mt-4 w-full sm:max-w-xs md:max-w-md">
+    <div className="bg-blue-700 p-3 rounded-full mt-8 sm:mt-12 text-2xl">
+      <BiLike />
+    </div>
+    <h2 className="font-bold text-lg sm:text-xl text-center">
+      Fudo - Food Share App Reducing Food Waste | Fibo Studio
+    </h2>
+    <p className="text-gray-400 text-sm">👍 292 👁️ 1K 💬 125</p>
+    <p className="text-gray-500 text-xs">Published: January 23rd 2025</p>
+  </div>
+</div>
+
         <div className="bg-[#1c1a1a] p-6">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center space-x-3">

@@ -5,6 +5,7 @@ import Input from "../Components/Input";
 import GooglPlay from '../images/Googleplay.webp'
 import Appstore from '../images/Appstore.png'
 import Button from "../Components/Button";
+import Notification from "../Components/Notification";
 export default function Header() {
   const [showSearchInput, setShowSearchInput] = useState(false);
   
@@ -29,15 +30,15 @@ export default function Header() {
         {/* Navigation Links */}
         <nav className="flex items-center space-x-4 text-gray-700">
           <div className="relative group">
-            <button className="hover:text-black font-bold h-5">
+            <Link to="/explore" className="hover:text-black font-bold h-5">
               Explore ▾
-            </button>
+            </Link>
 
             {/* Dropdown Menu */}
             <div className="absolute text-left hidden w-56 p-2 mt-2 bg-white border rounded-md shadow-md group-hover:block text-sm">
               {/* Bold Section */}
               <Link
-                to="/search"
+                to="/explore"
                 className="block px-4 py-1 font-semibold hover:bg-gray-100"
               >
                 Search & Explore
@@ -159,7 +160,7 @@ export default function Header() {
         </div>
 
         {/* Search Input Field */}
-        {showSearchInput && <Input />}
+        {showSearchInput && <Input placeholder="Search"/>}
       </div>
 
       <div className="flex items-center space-x-4">
@@ -170,9 +171,18 @@ export default function Header() {
         >
           <FaSearch />
         </button>
-        <button className="text-gray-700 text-xl hover:text-black">
-          <FaBell />
-        </button>
+        
+        <div className="relative group">
+  {/* Notification Bell Button */}
+  <button className="text-gray-700 text-xl hover:text-black">
+    <FaBell />
+  </button>
+
+  {/* Notification Dropdown (Hidden by Default, Shown on Hover) */}
+  <div className="absolute right-0 mt-2 w-48 bg-white border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300">
+    <Notification/>
+  </div>
+</div>
 
         {/* Authentication Buttons */}
         <Link

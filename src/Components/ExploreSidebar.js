@@ -1,6 +1,6 @@
 import React from "react";
 import { ChevronDown, SlidersHorizontal, ArrowLeft } from "lucide-react";
-
+import Button from './Button'
 const ExploreSidebar = ({ selected, setSelected }) => {
   const categories = ["Projects", "Assets", "Images", "People"];
 
@@ -18,15 +18,17 @@ const ExploreSidebar = ({ selected, setSelected }) => {
       {/* Filter Categories */}
       <div className="flex flex-col space-y-2">
         {categories.map((item) => (
-          <button
+          <Button
             key={item}
             onClick={() => setSelected(item)}
-            className={`py-2 px-4 rounded-md text-left transition duration-200 
+            btnText={item}
+            className={`   transition duration-200 
               ${selected === item ? "bg-blue-500 text-white font-semibold" : "bg-gray-100 text-gray-700"}
-            `}
-          >
-            {item}
-          </button>
+             
+              `}
+         />
+         
+        
         ))}
       </div>
 

@@ -7,6 +7,9 @@ import AuthPage from './Pages/AuthPage';
 import Jobs from './Pages/Jobs';
 import Behance from './Pages/Behance';
 import Explore from './Pages/Explore';
+import Recommended from './Components/Recommended';
+import HireFreelancer from './Pages/HireFreelancer';
+import FreelanceProject from './Components/FreelanceProject';
 
 function App() {
   return (
@@ -19,9 +22,14 @@ function App() {
           <Route path="/auth" element={<AuthPage />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/explore" element={<Explore/>} />
+          <Route path="/recommended" element={<Recommended/>} />
+          <Route path="/hireFreelancer" element={<HireFreelancer/>} />
+          <Route path="/freelanceproject" element={<FreelanceProject/>} />
           {/* Add more routes as needed */}
         </Routes>
+        
       </div>
+      
     </Router>
   );
 }

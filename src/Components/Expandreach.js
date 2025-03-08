@@ -1,7 +1,4 @@
 import React from "react";
-import img1 from '../images/bg-image.webp'
-import { Video } from "lucide-react";
-import Videos from "./Videos";
 import Button from "./Button";
 import { TrendingUp } from 'lucide-react';
 import GetWork from "./GetWork";

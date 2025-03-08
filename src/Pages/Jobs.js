@@ -148,15 +148,15 @@ const Jobs = () => {
         className="relative bg-cover bg-center h-56 flex flex-col justify-center items-center text-white"
         style={{ backgroundImage: `url(${bg_img})` }}
       >
-        <h1 className="text-3xl font-bold">Creative Jobs</h1>
-        <p>Browse and discover your next opportunity</p>
+        <h1 className="text-6xl font-bold">Creative Jobs</h1>
+        <p className="text-lg">Browse and discover your next opportunity</p>
       </div>
 
       {/* Main content */}
       <div className="flex">
         {/* Sidebar */}
         <aside className="w-72 p-4 border-r">
-          <button className="bg-blue-600 text-white w-full py-2 rounded-lg flex items-center justify-center font-semibold text-lg">
+          <button className="bg-blue-600 text-white w-full py-2 rounded-full flex items-center justify-center font-semibold text-lg">
             <span className="mr-2 text-xl">+</span> New Job
           </button>
 
@@ -201,7 +201,7 @@ const Jobs = () => {
               {selectedCategory} Jobs ({filteredJobs.length})
             </h1>
             <Input placeholder="Search Full-Time Jobs" value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}/>
+              onChange={(e) => setSearchQuery(e.target.value)} className="py-2"/>
           </div>
 <hr className="my-4"/>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">

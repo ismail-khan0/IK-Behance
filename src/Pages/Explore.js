@@ -3,9 +3,12 @@ import ExploreSidebar from "../Components/ExploreSidebar";
 import ExploreSearchBar from "../Components/ExploreSearchBar";
 import ProjectCard from "../Components/ProjectCard";
 import AssetCard from "../Components/AssetCard";
+import Button from "../Components/Button";
 
 const Explore = () => {
   const [selected, setSelected] = useState("Projects");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const projectData = [
     { title: "The Rings of Power", description: "Opening title sequence", imgSrc: "/placeholder.jpg" },
@@ -37,28 +40,35 @@ const Explore = () => {
     People: peopleData,
   };
 
-  const renderContent = () => {
-    const selectedData = dataMap[selected] || []; // Default to empty array if no match
-    return selectedData.map((card, index) =>
-      selected === "People" ? (
-        <AssetCard key={index} {...card} /> // Replace with a `PeopleCard` if needed
-      ) : (
-        <ProjectCard key={index} {...card} />
-      )
+  // Function to filter content based on search query
+  const filteredData = dataMap[selected].filter(
+    (item) =>
+      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const renderContent = () =>
+    filteredData.map((card, index) =>
+      selected === "People" ? <AssetCard key={index} {...card} /> : <ProjectCard key={index} {...card} />
     );
-  };
 
   return (
-    <div className="flex h-screen bg-gray-100 mt-16">
-      {/* Sidebar */}
-      <ExploreSidebar selected={selected} setSelected={setSelected} />
+    <div className="flex flex-col lg:flex-row h-screen bg-gray-100 mt-16">
+      {/* Sidebar Toggle Button (Only for Small Screens) */}
+      <div className="lg:hidden p-4 flex justify-between items-center">
+        <h2 className="text-xl font-semibold">Explore</h2>
+        <Button btnText="Filter" onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="p-4 bg-blue-500 text-white rounded-full" />
+      </div>
+
+      {/* Sidebar (Visible on lg, Toggle on sm & md) */}
+      <div className={`lg:flex ${isSidebarOpen ? "block" : "hidden"} w-full lg:w-80 p-4 bg-white border-r shadow-sm`}>
+        <ExploreSidebar selected={selected} setSelected={setSelected} />
+      </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-6">
-        <ExploreSearchBar />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {renderContent()}
-        </div>
+      <div className="flex-1 p-6 bg-gray-100">
+        <ExploreSearchBar onSearch={setSearchQuery} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">{renderContent()}</div>
       </div>
     </div>
   );

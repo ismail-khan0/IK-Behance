@@ -5,7 +5,9 @@ import Input from "../Components/Input";
 
 const Jobs = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [searchQuery, setSearchQuery] = useState(""); 
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State to manage sidebar visibility on small screens
+
   const categories = [
     { label: "All", section: "All" },
     { label: "Logo Design", section: "Popular" },
@@ -133,6 +135,7 @@ const Jobs = () => {
     },
   ];
 
+
   // Filter jobs based on the selected category
   const filteredJobs = jobs.filter((job) => {
     const matchesCategory = selectedCategory === "All" || job.category === selectedCategory;
@@ -141,21 +144,34 @@ const Jobs = () => {
       job.companyName.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
   return (
-    <div className="mt-10">
+    <div className="">
       {/* Upper section with background image and title */}
       <div
-        className="relative bg-cover bg-center h-56 flex flex-col justify-center items-center text-white"
+        className="relative bg-cover bg-center h-[60vh] flex flex-col justify-center items-center text-white"
         style={{ backgroundImage: `url(${bg_img})` }}
       >
-        <h1 className="text-6xl font-bold">Creative Jobs</h1>
-        <p className="text-lg">Browse and discover your next opportunity</p>
+        <h1 className="text-4xl sm:text-6xl font-bold">Creative Jobs</h1>
+        <p className="text-sm sm:text-lg">Browse and discover your next opportunity</p>
       </div>
 
       {/* Main content */}
-      <div className="flex">
+      <div className="flex flex-col sm:flex-row">
+        {/* Sidebar toggle button for small screens */}
+        <button
+          className="sm:hidden p-2 bg-blue-600 text-white rounded-md m-4"
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        >
+          {isSidebarOpen ? "Hide Categories" : "Show Categories"}
+        </button>
+
         {/* Sidebar */}
-        <aside className="w-72 p-4 border-r">
+        <aside
+          className={`${
+            isSidebarOpen ? "block" : "hidden"
+          } sm:block w-full sm:w-72 p-4 border-r`}
+        >
           <button className="bg-blue-600 text-white w-full py-2 rounded-full flex items-center justify-center font-semibold text-lg">
             <span className="mr-2 text-xl">+</span> New Job
           </button>
@@ -195,16 +211,20 @@ const Jobs = () => {
         </aside>
 
         {/* Job Listings */}
-        <main className="w-3/4 p-4">
-          <div className="flex justify-between items-center mb-4">
-            <h1 className="text-xl font-bold">
+        <main className="w-full sm:w-3/4 p-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
+            <h1 className="text-xl font-bold mb-2 sm:mb-0">
               {selectedCategory} Jobs ({filteredJobs.length})
             </h1>
-            <Input placeholder="Search Full-Time Jobs" value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)} className="py-2"/>
+            <Input
+              placeholder="Search Full-Time Jobs"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full sm:w-auto py-2"
+            />
           </div>
-<hr className="my-4"/>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">
+          <hr className="my-4" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredJobs.length > 0 ? (
               filteredJobs.map((job, index) => (
                 <JobCard

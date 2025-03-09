@@ -10,6 +10,8 @@ import Explore from './Pages/Explore';
 import Recommended from './Components/Recommended';
 import HireFreelancer from './Pages/HireFreelancer';
 import FreelanceProject from './Components/FreelanceProject';
+import PricingPlans from './Components/PricingPlans';
+import Notification from './Components/Notification';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           <Route path="/recommended" element={<Recommended/>} />
           <Route path="/hireFreelancer" element={<HireFreelancer/>} />
           <Route path="/freelanceproject" element={<FreelanceProject/>} />
+          <Route path="/notification" element={<Notification/>} />
+          <Route path="/pricing" element={<PricingPlans />} />
           {/* Add more routes as needed */}
         </Routes>
         

@@ -1,36 +1,66 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaSearch, FaBell, FaBars } from "react-icons/fa";
-import { Link, Links } from "react-router-dom"; // Import Link
+import { Link } from "react-router-dom";
 import Input from "../Components/Input";
 import GooglPlay from "../images/Googleplay.webp";
 import Appstore from "../images/Appstore.png";
 import Button from "../Components/Button";
 import Notification from "../Components/Notification";
 import { ChevronDown } from "lucide-react";
+import adobe from '../images/adobe.png';
+import AdobeLinks from "../Components/AdobeLinks";
+
 export default function Header() {
   const [showSearchInput, setShowSearchInput] = useState(false);
-
   const [language, setLanguage] = useState("English");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleSearchInput = () => {
     setShowSearchInput(!showSearchInput);
   };
 
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev); // Toggle the menu state
+  };
 
-  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  // Ref for the mobile menu and button
+  const mobileMenuRef = useRef(null);
+  const menuButtonRef = useRef(null);
+
+  // Close mobile menu when clicking outside or on the button
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Check if the click is outside the menu AND not on the button
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target) &&
+        !menuButtonRef.current.contains(event.target)
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    // Attach the event listener
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup the event listener
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <>
-      <header className="lg:flex hidden fixed top-0 left-0 w-full items-center justify-between p-2 border-b bg-white shadow-sm z-50">
-        <div className="flex items-center space-x-6 ">
+     <header className="lg:flex hidden fixed top-0 left-0 w-full items-center justify-between p-2 border-b bg-white shadow-sm z-50">
+        <div className="flex items-center space-x-6">
           {/* Behance Logo */}
           <Link to="/">
             <span className="text-2xl font-bold">Bē</span>
           </Link>
+
           {/* Navigation Links */}
-          <nav className="flex items-center space-x-4 text-gray-700 ">
-            <div className="relative group flex items-center space-x-1 h-5 ">
-              <Link to="/explore" className="hover:text-black font-bold  ">
+          <nav className="flex items-center space-x-4 text-gray-700">
+            <div className="relative group flex items-center space-x-1 h-5">
+              <Link to="/explore" className="hover:text-black font-bold">
                 Explore
               </Link>
               <ChevronDown size={18} className="mt-2" />
@@ -38,22 +68,13 @@ export default function Header() {
               {/* Dropdown Menu */}
               <div className="absolute top-full left-0 text-left hidden w-48 p-2 mt-1 bg-white border rounded-md shadow-md group-hover:block text-sm">
                 {/* Bold Section */}
-                <Link
-                  to="/explore"
-                  className="block px-4 py-1 font-semibold hover:bg-gray-100"
-                >
+                <Link to="/explore" className="block px-4 py-1 font-semibold hover:bg-gray-100">
                   Search & Explore
                 </Link>
-                <Link
-                  to="/explore"
-                  className="block px-4 py-1 font-semibold hover:bg-gray-100"
-                >
+                <Link to="/explore" className="block px-4 py-1 font-semibold hover:bg-gray-100">
                   Assets
                 </Link>
-                <Link
-                  to="/explore"
-                  className="block px-4 py-1 font-semibold hover:bg-gray-100"
-                >
+                <Link to="/explore" className="block px-4 py-1 font-semibold hover:bg-gray-100">
                   Curated Galleries
                 </Link>
 
@@ -83,10 +104,7 @@ export default function Header() {
             <Link to="/jobs" className="hover:text-black font-bold">
               Jobs
             </Link>
-            <Link
-              to="/behance"
-              className="flex items-center space-x-1 hover:text-black font-bold h-5"
-            >
+            <Link to="/behance" className="flex items-center space-x-1 hover:text-black font-bold h-5">
               <span>Behance</span>
               <span className="inline-flex items-center bg-gradient-to-r from-blue-500 to-blue-700 text-white text-xs font-bold px-1 py-[2px] rounded-md">
                 PRO
@@ -105,22 +123,13 @@ export default function Header() {
             <div className="absolute top-full left-0 hidden p-4 mt-2 bg-white border rounded-md shadow-md group-hover:block w-52 text-sm">
               {/* Main Options */}
               <div>
-                <Link
-                  to="/find-creatives"
-                  className="flex px-2 py-1 font-semibold hover:bg-gray-100"
-                >
+                <Link to="/hirefreelancer" className="flex px-2 py-1 font-semibold hover:bg-gray-100">
                   Find Creatives
                 </Link>
-                <Link
-                  to="/hiring"
-                  className="flex px-2 py-1 font-semibold hover:bg-gray-100"
-                >
+                <Link to="/hirefreelancer" className="flex px-2 py-1 font-semibold hover:bg-gray-100">
                   Hiring on Behance
                 </Link>
-                <Link
-                  to="/new-project"
-                  className="flex px-2 py-1 font-semibold hover:bg-gray-100"
-                >
+                <Link to="/hirefreelancer" className="flex px-2 py-1 font-semibold hover:bg-gray-100">
                   New Freelance Project
                 </Link>
               </div>
@@ -130,55 +139,54 @@ export default function Header() {
 
               {/* Subcategories */}
               <div className="text-gray-600 space-y-1 text-left">
-                <Link
-                  to="/logo-designers"
-                  className="block px-2 hover:text-black"
-                >
+                <Link to="/logo-designers" className="block px-2 hover:text-black">
                   Logo Designers
                 </Link>
-                <Link
-                  to="/brand-designers"
-                  className="block px-2 hover:text-black"
-                >
+                <Link to="/brand-designers" className="block px-2 hover:text-black">
                   Brand Designers
                 </Link>
-                <Link
-                  to="/website-designers"
-                  className="block px-2 hover:text-black"
-                >
+                <Link to="/website-designers" className="block px-2 hover:text-black">
                   Website Designers
                 </Link>
-                <Link
-                  to="/illustrators"
-                  className="block px-2 hover:text-black"
-                >
+                <Link to="/illustrators" className="block px-2 hover:text-black">
                   Illustrators
                 </Link>
-                <Link
-                  to="/social-media-designers"
-                  className="block px-2 hover:text-black"
-                >
+                <Link to="/social-media-designers" className="block px-2 hover:text-black">
                   Social Media Designers
                 </Link>
               </div>
             </div>
           </div>
-
-          {/* Search Input Field */}
-          {showSearchInput && <Input placeholder="Search" />}
         </div>
 
         <div className="flex items-center space-x-4">
-          {/* Icons */}
-          <button
-            onClick={toggleSearchInput}
-            className="p-2 text-gray-700 text-xl border rounded-full hover:text-black"
-          >
-            <FaSearch />
-          </button>
+          {/* Search Input and Icon */}
+          <div className="relative flex items-center">
+            {/* Search Input */}
+            <div
+              className={`absolute right-10 bg-white transition-all duration-300 ${
+                showSearchInput ? "w-48 opacity-100" : "w-0 opacity-0"
+              }`}
+              style={{ zIndex: 1 }}
+            >
+              <Input
+                placeholder="Search"
+                className={`p-2 w-[190px] ${showSearchInput ? "block" : "hidden"}`}
+              />
+            </div>
 
+            {/* Search Icon */}
+            <button
+              onClick={toggleSearchInput}
+              className="p-2 text-gray-700 text-xl border rounded-full hover:text-black"
+              style={{ zIndex: 2 }}
+            >
+              <FaSearch />
+            </button>
+          </div>
+
+          {/* Notification Bell Button */}
           <div className="relative group">
-            {/* Notification Bell Button */}
             <button className="text-gray-700 text-xl hover:text-black">
               <FaBell />
             </button>
@@ -204,22 +212,41 @@ export default function Header() {
           </Link>
 
           {/* Adobe Icon */}
-          <span className="text-lg font-bold">Ⓐ</span>
+          <div className="relative group text-lg font-bold">
+            <img className="w-12 h-10" src={adobe} alt="Adobe" />
+            
+            {/* This div will be hidden until hover */}
+            <div className="absolute hidden group-hover:block left-[-400px]">
+              <AdobeLinks />
+            </div>
+          </div>
         </div>
       </header>
-      <header className="lg:hidden flex fixed top-0 left-0 w-full items-center justify-between p-3 border-b bg-white  text-black shadow-sm z-50">
+      <header className="lg:hidden flex fixed top-0 left-0 w-full items-center justify-between p-3 border-b bg-white text-black shadow-sm z-50">
         <div className="flex items-center space-x-4">
-          <button className="text-black text-xl" onClick={toggleMobileMenu}>
+          {/* Menu Button */}
+          <button
+            ref={menuButtonRef}
+            className="text-black text-xl"
+            onClick={toggleMobileMenu}
+          >
             <FaBars />
           </button>
           <Link to="/" className="text-2xl font-bold">
             Bē
           </Link>
         </div>
+
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="absolute top-12 left-0  w-72 bg-white text-black text-left p-5 shadow-lg z-50">
+          <div
+            ref={mobileMenuRef}
+            className="absolute top-12 left-0 w-72 bg-white text-black text-left p-5 shadow-lg z-50"
+          >
             <ul className="space-y-2 text-lg">
-              <li className="font-bold">Assets</li>
+              <li className="font-bold">
+                <Link to="/explore">Assets</Link>
+              </li>
               <li>
                 <Link to="/jobs" className="hover:text-black font-bold">
                   Jobs
@@ -242,6 +269,7 @@ export default function Header() {
                 </Link>
               </li>
             </ul>
+
             <div className="mt-4">
               <img src={Appstore} alt="App Store" className="w-40 mb-2" />
               <img src={GooglPlay} alt="Google Play" className="w-40" />
@@ -259,7 +287,7 @@ export default function Header() {
               <option value="Chinese">Chinese</option>
             </select>
 
-            <ul className=" space-y-[2px] ml-1">
+            <ul className="space-y-[2px] ml-1">
               <li>
                 <Link to="/about" className="hover:text-black">
                   About
@@ -296,15 +324,15 @@ export default function Header() {
                 </Link>
               </li>
               <Link to="/auth">
-                {" "}
                 <Button
-                  btnText=" Sign Up"
+                  btnText="Sign Up"
                   className="bg-blue-500 text-white flex justify-center mt-4 text-center"
                 />
               </Link>
             </ul>
           </div>
         )}
+
         <div className="flex items-center space-x-4">
           <button className="text-xl text-black hover:opacity-80">
             <FaSearch />

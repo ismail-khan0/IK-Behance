@@ -1,8 +1,9 @@
 import React from 'react';
-import img10 from '../images/MoodBoard3.jpg'
+import ik_img from '../images/ik-img.jpeg'
+import Fibo_Studio from '../images/fibo_studio_logo.jpeg'
 const owners = [
-  { name: "Ismail Khan", country: "Pakistan", img: {img10} },
-  { name: "Fibo Studio", country: "Pakistan", img: "https://via.placeholder.com/40" }
+  { name: "Ismail Khan", country: "Pakistan", img:ik_img  },
+  { name: "Fibo Studio", country: "Pakistan", img: Fibo_Studio }
 ];
 
 export default function Follow() {

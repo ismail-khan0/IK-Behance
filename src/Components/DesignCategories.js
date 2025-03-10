@@ -1,13 +1,22 @@
 import React from "react";
+import graphic from '../images/freelance/graphic.jpeg'
+import Logo from '../images/freelance/logo.jpg'
+import branding from '../images/freelance/branding.png'
+import webdesign from '../images/freelance/webdesign.jpeg'
+import social from '../images/freelance/social.jpeg'
+import illustration from '../images/freelance/illustration.png'
+import architicture from '../images/freelance/architicture.jpeg'
+import UIUX from '../images/freelance/UIUX.jpeg'
+
 const categories = [
-    { name: "Graphic Design", image: "/path-to-image-1.jpg" },
-    { name: "Logo Design", image: "/path-to-image-2.jpg" },
-    { name: "Branding Services", image: "/path-to-image-3.jpg" },
-    { name: "Website Design", image: "/path-to-image-4.jpg" },
-    { name: "Social Media Design", image: "/path-to-image-5.jpg" },
-    { name: "Illustrations", image: "/path-to-image-6.jpg" },
-    { name: "Architecture & Interior Design", image: "/path-to-image-7.jpg" },
-    { name: "UI/UX Design", image: "/path-to-image-8.jpg" },
+    { name: "Graphic Design", image: graphic },
+    { name: "Logo Design", image: Logo },
+    { name: "Branding Services", image: branding },
+    { name: "Website Design", image: webdesign },
+    { name: "Social Media Design", image: social },
+    { name: "Illustrations", image: illustration},
+    { name: "Architecture & Interior Design", image: architicture},
+    { name: "UI/UX Design", image: UIUX },
   ];
   
   export default function DesignCategories() {
@@ -26,7 +35,7 @@ const categories = [
                   className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                  <h3 className="text-white font-semibold text-lg">{category.name}</h3>
+                  <h3 className="text-white font-semibold shadow-lg text-2xl text-shadow-[0_2px_4px_rgb(99_102_241_/_0.8)] text-white text-xl md:text-2xl leading-snug font-manrope font-extrabold">{category.name}</h3>
                 </div>
               </div>
             ))}

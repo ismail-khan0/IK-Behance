@@ -1,12 +1,16 @@
 import { useState } from "react";
-import JobCard from "../Components/JobCard";
-import bg_img from "../images/bg-image.webp";
-import Input from "../Components/Input";
+import JobSearch from "../Components/JobSearch";
+import bg_img from '../images/bg-image.webp';
+import codecraft from '../images/Codecraft.jpeg';
+import tech from '../images/technical.jpeg';
+import conzummate from '../images/conzummate_logo.jpeg';
+import JobList from "../Components/JobList";
+import JobSidebar from "../Components/JobSidebar";
 
 const Jobs = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State to manage sidebar visibility on small screens
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const categories = [
     { label: "All", section: "All" },
@@ -31,7 +35,7 @@ const Jobs = () => {
       location: "Lahore, Pakistan",
       jobTitle: "Graphic and UI Designer",
       description: "Looking for a Senior Graphic and UI Designer to join our creative team.",
-      logo: "/logo.png",
+      logo: conzummate,
       postedTime: "6 days ago",
       category: "Logo Design",
     },
@@ -40,7 +44,7 @@ const Jobs = () => {
       location: "Karachi, Pakistan",
       jobTitle: "Frontend Developer",
       description: "Seeking an experienced React.js developer for an exciting project.",
-      logo: "/tech-logo.png",
+      logo: tech,
       postedTime: "3 days ago",
       category: "Website Design",
     },
@@ -49,7 +53,7 @@ const Jobs = () => {
       location: "Islamabad, Pakistan",
       jobTitle: "Full Stack Developer",
       description: "Hiring a full stack developer with expertise in React and Node.js.",
-      logo: "/codecraft-logo.png",
+      logo: codecraft,
       postedTime: "1 week ago",
       category: "UI/UX Design",
     },
@@ -58,7 +62,7 @@ const Jobs = () => {
       location: "Lahore, Pakistan",
       jobTitle: "Branding Services",
       description: "Looking for a Senior Graphic and UI Designer to join our creative team.",
-      logo: "/logo.png",
+      logo: conzummate,
       postedTime: "6 days ago",
       category: "Branding Services",
     },
@@ -67,7 +71,7 @@ const Jobs = () => {
       location: "Karachi, Pakistan",
       jobTitle: "Social Media Design",
       description: "Seeking an experienced React.js developer for an exciting project.",
-      logo: "/tech-logo.png",
+      logo: tech,
       postedTime: "3 days ago",
       category: "Social Media Design",
     },
@@ -76,7 +80,7 @@ const Jobs = () => {
       location: "Islamabad, Pakistan",
       jobTitle: "Website Design",
       description: "Hiring a full stack developer with expertise in React and Node.js.",
-      logo: "/codecraft-logo.png",
+      logo: codecraft,
       postedTime: "1 week ago",
       category: "Website Design",
     } ,{
@@ -84,7 +88,7 @@ const Jobs = () => {
       location: "Lahore, Pakistan",
       jobTitle: "llustrations",
       description: "Looking for a Senior Graphic and UI Designer to join our creative team.",
-      logo: "/logo.png",
+      logo: conzummate,
       postedTime: "6 days ago",
       category: "llustrations",
     },
@@ -93,7 +97,7 @@ const Jobs = () => {
       location: "Karachi, Pakistan",
       jobTitle: "Packaging Design",
       description: "Seeking an experienced React.js developer for an exciting project.",
-      logo: "/tech-logo.png",
+      logo: tech,
       postedTime: "3 days ago",
       category: "Packaging Design",
     },
@@ -102,7 +106,7 @@ const Jobs = () => {
       location: "Islamabad, Pakistan",
       jobTitle: "Landing Page Design",
       description: "Hiring a full stack developer with expertise in React and Node.js.",
-      logo: "/codecraft-logo.png",
+      logo: codecraft,
       postedTime: "1 week ago",
       category: "Landing Page Design",
     },
@@ -111,7 +115,7 @@ const Jobs = () => {
       location: "Lahore, Pakistan",
       jobTitle: "UI/UX Design",
       description: "Looking for a Senior Graphic and UI Designer to join our creative team.",
-      logo: "/logo.png",
+      logo: conzummate,
       postedTime: "6 days ago",
       category: "UI/UX Design",
     },
@@ -120,7 +124,7 @@ const Jobs = () => {
       location: "Karachi, Pakistan",
       jobTitle: "Architecture & Interior Design",
       description: "Seeking an experienced React.js developer for an exciting project.",
-      logo: "/tech-logo.png",
+      logo: tech,
       postedTime: "3 days ago",
       category: "Architecture & Interior Design",
     },
@@ -129,14 +133,12 @@ const Jobs = () => {
       location: "Islamabad, Pakistan",
       jobTitle: "Logo Design",
       description: "Hiring a full stack developer with expertise in React and Node.js.",
-      logo: "/codecraft-logo.png",
+      logo: codecraft,
       postedTime: "1 week ago",
       category: "Logo Design",
     },
   ];
 
-
-  // Filter jobs based on the selected category
   const filteredJobs = jobs.filter((job) => {
     const matchesCategory = selectedCategory === "All" || job.category === selectedCategory;
     const matchesSearch =
@@ -147,7 +149,7 @@ const Jobs = () => {
 
   return (
     <div className="">
-      {/* Upper section with background image and title */}
+      {/* Integrated Hero Section */}
       <div
         className="relative bg-cover bg-center h-[60vh] flex flex-col justify-center items-center text-white"
         style={{ backgroundImage: `url(${bg_img})` }}
@@ -156,93 +158,30 @@ const Jobs = () => {
         <p className="text-sm sm:text-lg">Browse and discover your next opportunity</p>
       </div>
 
-      {/* Main content */}
       <div className="flex flex-col sm:flex-row">
-        {/* Sidebar toggle button for small screens */}
         <button
-          className="sm:hidden p-2 bg-blue-600 text-white rounded-md m-4"
+          className="sm:hidden p-2 bg-blue-600 text-white rounded-full m-4"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
           {isSidebarOpen ? "Hide Categories" : "Show Categories"}
         </button>
 
-        {/* Sidebar */}
-        <aside
-          className={`${
-            isSidebarOpen ? "block" : "hidden"
-          } sm:block w-full sm:w-72 p-4 border-r`}
-        >
-          <button className="bg-blue-600 text-white w-full py-2 rounded-full flex items-center justify-center font-semibold text-lg">
-            <span className="mr-2 text-xl">+</span> New Job
-          </button>
+        <JobSidebar
+          categories={categories}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          isSidebarOpen={isSidebarOpen}
+        />
 
-          <div className="mt-6">
-            <h2 className="font-bold text-lg text-left">Categories</h2>
-            <ul className="mt-2 space-y-2 text-left">
-              {["All", "Popular", "Graphic Design"].map((section) => (
-                <div key={section}>
-                  {section !== "All" && (
-                    <h3 className="text-sm text-gray-500 mt-4 uppercase">
-                      {section}
-                    </h3>
-                  )}
-                  {categories
-                    .filter((cat) => cat.section === section)
-                    .map((cat) => (
-                      <li key={cat.label} className="flex items-center space-x-2">
-                        <input
-                          type="radio"
-                          name="category"
-                          id={cat.label}
-                          value={cat.label}
-                          checked={selectedCategory === cat.label}
-                          onChange={() => setSelectedCategory(cat.label)}
-                          className="accent-blue-600"
-                        />
-                        <label htmlFor={cat.label} className="cursor-pointer">
-                          {cat.label}
-                        </label>
-                      </li>
-                    ))}
-                </div>
-              ))}
-            </ul>
-          </div>
-        </aside>
-
-        {/* Job Listings */}
         <main className="w-full sm:w-3/4 p-4">
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
-            <h1 className="text-xl font-bold mb-2 sm:mb-0">
-              {selectedCategory} Jobs ({filteredJobs.length})
-            </h1>
-            <Input
-              placeholder="Search Full-Time Jobs"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full sm:w-auto py-2"
-            />
-          </div>
-          <hr className="my-4" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredJobs.length > 0 ? (
-              filteredJobs.map((job, index) => (
-                <JobCard
-                  key={index}
-                  companyName={job.companyName}
-                  location={job.location}
-                  jobTitle={job.jobTitle}
-                  description={job.description}
-                  logo={job.logo}
-                  postedTime={job.postedTime}
-                />
-              ))
-            ) : (
-              <p className="col-span-3 text-center text-gray-500">
-                No jobs available for this category.
-              </p>
-            )}
-          </div>
+          <JobSearch
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            jobCount={filteredJobs.length}
+            selectedCategory={selectedCategory}
+          />
+
+          <JobList jobs={filteredJobs} />
         </main>
       </div>
     </div>

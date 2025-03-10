@@ -3,9 +3,10 @@ import Hire_Landing from '../images/hire-landing-how-1.webp'
 import Button from "./Button";
 const HiringonBehance = () => {
   return (
-    <div className="bg-gray-50 min-h-screen flex flex-col items-center py-10 mx-16">
+    <div className="bg-gray-50 min-h-screen flex flex-col items-center py-10 ">
       {/* Heading Section */}
-      <div className="text-center">
+      <div className="mx-16">
+      <div className="text-center ">
         <h4 className="text-blue-500 font-semibold">How it works</h4>
         <h2 className="text-4xl font-bold text-gray-900 mt-2">
           Hiring on Behance is easy & secure.
@@ -55,7 +56,7 @@ const HiringonBehance = () => {
 
       {/* Get Started Button */}
       <Button btnText="Get Started" className="mt-6 bg-blue-600 text-white px-6 py-2  font-semibold"/>
-      
+      </div>
     </div>
   );
 };

@@ -22,34 +22,34 @@ const HireFreelancer = () => {
             {/* My Freelance Projects */}
             <button
               onClick={() => setActiveComponent("freelanceProjects")}
-              className={`flex items-center space-x-2 ${
+              className={`flex items-center space-x-2 flex flex-col lg:flex-row ${
                 activeComponent === "freelanceProjects" ? "text-blue-500" : "hover:text-blue-500"
               }`}
             >
               <FiClipboard size={18} />
-              <span className="hidden lg:inline">My Freelance Projects</span>
+              <span className=" lg:inline">My Freelance Projects</span>
             </button>
 
             {/* Find Creatives */}
             <button
               onClick={() => setActiveComponent("findCreatives")}
-              className={`flex items-center space-x-2 ${
+              className={`flex items-center space-x-2 flex flex-col lg:flex-row ${
                 activeComponent === "findCreatives" ? "text-blue-500" : "hover:text-blue-500"
               }`}
             >
               <FiSearch size={18} />
-              <span className="hidden lg:inline">Find Creatives</span>
+              <span className=" lg:inline">Find Creatives</span>
             </button>
 
             {/* Hiring on Behance */}
             <button
               onClick={() => setActiveComponent("hiringBehance")}
-              className={`flex items-center space-x-2 ${
+              className={`flex items-center space-x-2 flex flex-col lg:flex-row ${
                 activeComponent === "hiringBehance" ? "text-blue-500" : "hover:text-blue-500"
               }`}
             >
               <FiInfo size={18} />
-              <span className="hidden lg:inline">Hiring on Behance</span>
+              <span className=" lg:inline">Hiring on Behance</span>
             </button>
 
             {/* Divider */}
@@ -58,12 +58,12 @@ const HireFreelancer = () => {
             {/* New Freelance Project */}
             <button
               onClick={() => setActiveComponent("newProject")}
-              className={`flex items-center space-x-2 ${
+              className={`flex items-center space-x-2 flex flex-col lg:flex-row ${
                 activeComponent === "newProject" ? "text-blue-500" : "hover:text-blue-500"
               }`}
             >
               <FiPlus size={18} />
-              <span className="hidden lg:inline">New Freelance Project</span>
+              <span className="lg:inline">New Freelance Project</span>
             </button>
           </div>
         </nav>

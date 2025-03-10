@@ -28,7 +28,7 @@ const ExploreSearchBar = ({ onSearch }) => {
       <Button
   btnText="Recommended"
   onClick={() => setIsOpen(!isOpen)}
-  className="px-3 py-2 sm:px-4 sm:py-3 border rounded-full border-gray-300 hover:border-black hover:text-blue-500 focus:border-blue-500 bg-white text-black font-medium text-sm sm:text-base"
+  className="px-3 py-2 sm:px-4 sm:py-3 border rounded-full border-gray-300 hover:border-black hover:text-blue-500 focus:border-blue-500 bg-blue-600 text-white font-medium text-sm sm:text-base"
 />
 
 

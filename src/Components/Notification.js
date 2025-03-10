@@ -4,17 +4,16 @@ import pro from "../images/pro.png";
 import { Link } from "react-router-dom"; 
 const Notification = () => {
   return (
-    <div className="w-[400px] mx-auto p-4 bg-white border border-gray-200 rounded-lg shadow-md">
+    <div className="w-[400px] mx-auto p-4 bg-white border border-gray-200 rounded-lg shadow-md mt-12 lg:mt-0">
       {/* Header */}
       <h2 className="text-lg font-semibold mb-3">Your Notifications</h2>
 
       <hr className="mb-4" />
       <div className="flex items-start space-x-3">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Behance_logo.svg/1024px-Behance_logo.svg.png"
-          alt="Behance Logo"
-          className="w-10 h-10"
-        />
+      <h1 className="w-10 h-10 bg-blue-500 flex items-center justify-center text-white px-4 rounded-full text-sm">
+  IBē
+</h1>
+
         <div>
           <h3 className="text-md font-semibold text-left">
             Introducing Behance Pro

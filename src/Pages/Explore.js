@@ -4,6 +4,16 @@ import ExploreSearchBar from "../Components/ExploreSearchBar";
 import ProjectCard from "../Components/ProjectCard";
 import AssetCard from "../Components/AssetCard";
 import Button from "../Components/Button";
+import RingofPower from '../images/ringpower.jpg'
+import Logo from '../images/logo.jpg'
+import Casa from '../images/Casa.jpeg'
+import TChair from '../images/3DChair.jpg'
+import Ui_Kit from '../images/Ui_Kit.avif'
+import sunsit from '../images/sunsit.jpeg'
+import Modernart from '../images/Modernart.jpeg'
+import logo from '../images/logo.jpg'
+import ik from '../images/ik-img.jpeg'
+import Ui_research from '../images/Ui_research.jpeg'
 
 const Explore = () => {
   const [selected, setSelected] = useState("Projects");
@@ -11,25 +21,25 @@ const Explore = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const projectData = [
-    { title: "The Rings of Power", description: "Opening title sequence", imgSrc: "/placeholder.jpg" },
-    { title: "LOGOFOLIO - V.02", description: "2023 Collection", imgSrc: "/placeholder.jpg" },
-    { title: "CASA PILARA PLURAL ARQ", description: "Mariano Imperial", imgSrc: "/placeholder.jpg" },
+    { title: "The Rings of Power", description: "Opening title sequence", imgSrc: RingofPower },
+    { title: "LOGOFOLIO - V.02", description: "2023 Collection", imgSrc: Logo },
+    { title: "CASA PILARA PLURAL ARQ", description: "Mariano Imperial", imgSrc: Casa },
   ];
 
   const assetData = [
-    { title: "3D Model - Chair", description: "High-poly chair model", imgSrc: "/placeholder.jpg" },
-    { title: "UI Kit", description: "A modern UI kit for designers", imgSrc: "/placeholder.jpg" },
-    { title: "Texture Pack", description: "High-resolution textures for 3D projects", imgSrc: "/placeholder.jpg" },
+    { title: "3D Model - Chair", description: "High-poly chair model", imgSrc: TChair },
+    { title: "UI Kit", description: "A modern UI kit for designers", imgSrc:Ui_Kit},
+    { title: "Texture Pack", description: "High-resolution textures for 3D projects", imgSrc: sunsit },
   ];
 
   const imageData = [
-    { title: "Sunset View", description: "A beautiful sunset landscape", imgSrc: "/placeholder.jpg" },
-    { title: "Modern Art", description: "A digital painting", imgSrc: "/placeholder.jpg" },
+    { title: "Sunset View", description: "A beautiful sunset landscape", imgSrc: sunsit },
+    { title: "Modern Art", description: "A digital painting", imgSrc:Modernart },
   ];
 
   const peopleData = [
-    { title: "John Doe", description: "Creative Designer", imgSrc: "/placeholder.jpg" },
-    { title: "Jane Smith", description: "UX Researcher", imgSrc: "/placeholder.jpg" },
+    { title: "Ismail khan", description: "Creative Designer", imgSrc: ik },
+    { title: "Jane Smith", description: "UX Researcher", imgSrc: Ui_research },
   ];
 
   // Mapping selected category to data

@@ -48,7 +48,7 @@ export default function Fibo_Studio() {
           <img
             src={ik_img}
             alt="Profile"
-            className="w-8 h-8 rounded-full"
+            className="w-10 h-10 rounded-full"
           />
           <div>
             <h1 className="text-lg font-semibold">

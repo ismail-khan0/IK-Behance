@@ -43,7 +43,7 @@ export default function Recommended() {
     return (
 <>
       <div className="p-6 mt-16">
-        <ExploreSearchBar/>
+        
         <hr/>
         <div className="flex justify-between mt-4 ">
         <p className="text-sm font-bold mb-4">10000+ Results</p>
@@ -71,28 +71,11 @@ export default function Recommended() {
         <Link to='/auth' className="font-semibold underline cursor-pointer">Sign in </Link> to your account to view more work personalized to your preferences.
       </p>
 
-      <div className="flex flex-col items-center mt-4">
-        <button className="bg-blue-600 text-white font-medium px-6 py-2 rounded-full">
-          Sign Up With Email
-        </button>
-
-        <div className="flex items-center gap-3 mt-4">
-          <span className="text-gray-500">or</span>
-          <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300">
-            <FaApple className="text-black text-2xl" />
-          </button>
-          <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300">
-            <FaFacebook className="text-blue-600 text-2xl" />
-          </button>
-          <button className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300">
-            <FaGoogle className="text-red-500 text-2xl" />
-          </button>
-        </div>
-      </div>
+      
     </div>
   
       </div>
-        <Footer/>
+       
         </>
     );
   }

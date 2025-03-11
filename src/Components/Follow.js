@@ -8,7 +8,7 @@ const owners = [
 
 export default function Follow() {
   return (
-    <div className="mb-6 p-4  bg-white rounded-lg shadow">
+    <div className="mb-6 p-4  bg-white rounded-lg shadow text-left">
       <p className="font-semibold text-gray-700 mb-3 text-xs">OWNERS</p>
       <div className="space-y-4">
         {owners.map((owner, index) => (

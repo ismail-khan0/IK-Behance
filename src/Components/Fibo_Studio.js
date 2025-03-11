@@ -1,15 +1,13 @@
-import { useRef } from "react";
+import { useRef ,useState} from "react";
 import img1 from '../images/ShareFood.jpg';
 import img2 from '../images/MoodBoard2.jpg';
 import img3 from '../images/MoodBoard3.jpg';
 import img4 from '../images/MoodBoard4.jpg';
 import img5 from '../images/MoodBoard5.jpg';
 import img6 from '../images/MoodBoard6.jpg';
-import img7 from '../images/MoodBoard7.jpg';
 import img8 from '../images/MoodBoard8.jpg';
 import img0 from '../images/MoodBoard.png';
 import img00 from '../images/MoodBoard-.jpg';
-import { BiLike } from "react-icons/bi";
 import { FaThumbsUp, FaEye, FaComment } from 'react-icons/fa';
 import Videos from "./Videos";
 import Conversation from "./Conversation";
@@ -19,6 +17,7 @@ import ik_img from '../images/ik-img.jpeg'
 import Consultation from "./Consultation";
 
 export default function Fibo_Studio() {
+  const [expanded, setExpanded] = useState(false);
   const scrollRef = useRef(null);
 
   const scrollLeft = () => {
@@ -169,18 +168,30 @@ export default function Fibo_Studio() {
       {/* Right Section - Project Details */}
       <div className="w-full md:w-1/3 bg-white p-6 rounded-lg shadow-md">
         <Follow/>
-        <div className="mb-6 p-4 bg-white rounded-lg shadow">
-          <h3 className="font-semibold">Project Made For</h3>
-          <p>Fibo Studio - Team</p>
+        <div className="mb-6 p-4 bg-white rounded-lg shadow text-left">
+        <h3 className="text-gray-500 uppercase text-xs font-semibold">Project Made For</h3>
+        <div className="flex items-center gap-3 mt-2">
+          <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
+          <p className="font-semibold">Fibo Studio - Team</p>
         </div>
-        <div className="p-4 bg-white rounded-lg shadow">
+      </div>
+      <div className="p-4 bg-white rounded-lg shadow text-left">
       <h3 className="font-semibold text-gray-800">
-        Fudo - Food Share App Reducing Food W...
+        Fudo - Food Share App Reducing Food Waste
       </h3>
       <p className="text-gray-600 text-sm mt-1">
-        FUDO is a food sharing app that connects donors with recipients to reduce food waste by sharing food. It is designed to promote sustainable pra
+        FUDO is a food sharing app that connects donors with recipients to reduce food waste by sharing food.
+        It is designed to promote sustainable practices.
+        {expanded && (
+          " Users can easily list surplus food, find nearby donations, and contribute to a community focused on reducing food waste."
+        )}
       </p>
-      <button className="text-blue-600 font-medium mt-1">Read More</button>
+      <button
+        className="text-blue-600 font-medium mt-1"
+        onClick={() => setExpanded(!expanded)}
+      >
+        {expanded ? "Read Less" : "Read More"}
+      </button>
 
       {/* Engagement Section */}
       <div className="flex items-center text-gray-500 text-sm mt-3 space-x-4">

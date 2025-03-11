@@ -16,9 +16,10 @@ export default function Expandreach() {
           Get your work seen by more clients and collaborators
         </h2>
         <Button
-          btnText="Start Free Trial"
-          className="w-full sm:w-auto px-4 sm:px-6 py-2 bg-blue-500 mt-4 text-white "
-        />
+  btnText="Start Free Trial"
+  className="w-full sm:w-auto px-4 sm:px-6 py-2 bg-blue-500 mt-4 text-white 
+             sm:bg-green-500 md:bg-yellow-500 lg:bg-purple-500"
+/>
       </div>
       <GetWork />
     </div>

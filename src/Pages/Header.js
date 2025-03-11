@@ -50,9 +50,11 @@ export default function Header() {
   }, []);
 
   const navigate = useNavigate();
-
   const handleExploreToolsClick = (item) => {
     navigate(`/exploretools?tab=${encodeURIComponent(item)}`);
+  };
+  const handleFreelanceNavigation = (category) => {
+    navigate(`/hirefreelancer?category=${encodeURIComponent(category)}`);
   };
 
   return (
@@ -66,56 +68,56 @@ export default function Header() {
 
           {/* Navigation Links */}
           <nav className="flex items-center space-x-4 text-gray-700">
-          <div className="relative group flex items-center space-x-1 h-5">
-      <Link to="/explore" className="hover:text-black font-bold">
-        Explore
-      </Link>
-      <ChevronDown size={18} className="mt-2" />
+            <div className="relative group flex items-center space-x-1 h-5">
+              <Link to="/explore" className="hover:text-black font-bold">
+                Explore
+              </Link>
+              <ChevronDown size={18} className="mt-2" />
 
-      {/* Dropdown Menu */}
-      <div className="absolute top-full left-0 text-left hidden w-48 p-2 mt-1 bg-white border rounded-md shadow-md group-hover:block text-sm">
-        {/* Bold Section */}
-        <Link
-          to="/explore"
-          className="block px-4 py-1 font-semibold hover:bg-gray-100"
-        >
-          Search & Explore
-        </Link>
-        <Link
-          to="/explore"
-          className="block px-4 py-1 font-semibold hover:bg-gray-100"
-        >
-          Assets
-        </Link>
-        <Link
-          to="/explore"
-          className="block px-4 py-1 font-semibold hover:bg-gray-100"
-        >
-          Curated Galleries
-        </Link>
+              {/* Dropdown Menu */}
+              <div className="absolute top-full left-0 text-left hidden w-48 p-2 mt-1 bg-white border rounded-md shadow-md group-hover:block text-sm">
+                {/* Bold Section */}
+                <Link
+                  to="/explore"
+                  className="block px-4 py-1 font-semibold hover:bg-gray-100"
+                >
+                  Search & Explore
+                </Link>
+                <Link
+                  to="/explore"
+                  className="block px-4 py-1 font-semibold hover:bg-gray-100"
+                >
+                  Assets
+                </Link>
+                <Link
+                  to="/explore"
+                  className="block px-4 py-1 font-semibold hover:bg-gray-100"
+                >
+                  Curated Galleries
+                </Link>
 
-        {/* Divider */}
-        <hr className="my-2 border-gray-300" />
+                {/* Divider */}
+                <hr className="my-2 border-gray-300" />
 
-        {/* Normal Text Section */}
-        {[
-          "Best of Behance",
-          "Graphic Design",
-          "Illustration",
-          "Photography",
-          "UI/UX",
-          "3D Art",
-        ].map((item, index) => (
-          <div
-            key={index}
-            onClick={() => handleExploreToolsClick(item)}
-            className="block px-4 py-1 text-gray-600 hover:bg-gray-100 cursor-pointer"
-          >
-            {item}
-          </div>
-        ))}
-      </div>
-    </div>
+                {/* Normal Text Section */}
+                {[
+                  "Best of Behance",
+                  "Graphic Design",
+                  "Illustration",
+                  "Photography",
+                  "UI/UX",
+                  "3D Art",
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    onClick={() => handleExploreToolsClick(item)}
+                    className="block px-4 py-1 text-gray-600 hover:bg-gray-100 cursor-pointer"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
 
             <Link to="/jobs" className="hover:text-black font-bold">
               Jobs
@@ -132,75 +134,58 @@ export default function Header() {
           </nav>
 
           {/* Hire Freelancers Dropdown */}
+          {/* Freelance Projects Dropdown */}
           <div className="relative group flex items-center space-x-1">
-            <Link
-              to="/hirefreelancer"
-              className="hover:text-black font-bold flex items-center gap-2"
-            >
+            <button className="hover:text-black font-bold flex items-center gap-2">
               Freelance Projects
-            </Link>
+            </button>
             <ChevronDown size={18} className="mt-1" />
 
             {/* Dropdown Menu */}
             <div className="absolute top-full left-0 hidden p-4 mt-2 bg-white border rounded-md shadow-md group-hover:block w-52 text-sm">
               {/* Main Options */}
               <div>
-                <Link
-                  to="/hirefreelancer"
-                  className="flex px-2 py-1 font-semibold hover:bg-gray-100"
+                <button
+                  onClick={() => handleFreelanceNavigation("Find Creatives")}
+                  className="flex px-2 py-1 font-semibold hover:bg-gray-100 w-full text-left"
                 >
                   Find Creatives
-                </Link>
-                <Link
-                  to="/hirefreelancer"
-                  className="flex px-2 py-1 font-semibold hover:bg-gray-100"
+                </button>
+                <button
+                  onClick={() => handleFreelanceNavigation("Hiring on Behance")}
+                  className="flex px-2 py-1 font-semibold hover:bg-gray-100 w-full text-left"
                 >
                   Hiring on Behance
-                </Link>
-                <Link
-                  to="/hirefreelancer"
-                  className="flex px-2 py-1 font-semibold hover:bg-gray-100"
+                </button>
+                <button
+                  onClick={() =>
+                    handleFreelanceNavigation("New Freelance Project")
+                  }
+                  className="flex px-2 py-1 font-semibold hover:bg-gray-100 w-full text-left"
                 >
                   New Freelance Project
-                </Link>
+                </button>
               </div>
 
               {/* Divider */}
-              <hr className="my-2 border-gray-300" />
+              <hr className="my-2 border-gray-300 text-left" />
 
               {/* Subcategories */}
-              <div className="text-gray-600 space-y-1 text-left">
-                <Link
-                  to="/logo-designers"
-                  className="block px-2 hover:text-black"
+              {[
+                "Logo Designers",
+                "Brand Designers",
+                "Website Designers",
+                "Illustrators",
+                "Social Media Designers",
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  onClick={() => handleExploreToolsClick(item)}
+                  className="block px-2 py-1 text-gray-600 hover:bg-gray-100 cursor-pointer text-left"
                 >
-                  Logo Designers
-                </Link>
-                <Link
-                  to="/brand-designers"
-                  className="block px-2 hover:text-black"
-                >
-                  Brand Designers
-                </Link>
-                <Link
-                  to="/website-designers"
-                  className="block px-2 hover:text-black"
-                >
-                  Website Designers
-                </Link>
-                <Link
-                  to="/illustrators"
-                  className="block px-2 hover:text-black"
-                >
-                  Illustrators
-                </Link>
-                <Link
-                  to="/social-media-designers"
-                  className="block px-2 hover:text-black"
-                >
-                  Social Media Designers
-                </Link>
-              </div>
+                  {item}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -350,25 +335,46 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link to="/tou" className="hover:text-black">
+                <Link
+                  to="https://www.adobe.com/legal/terms.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-black"
+                >
                   TOU
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="hover:text-black">
+                <Link
+                  to="https://www.adobe.com/privacy.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-black"
+                >
                   Privacy
                 </Link>
               </li>
               <li>
-                <Link to="/community" className="hover:text-black">
+                <Link
+                  to="https://www.behance.net/misc/community"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-black"
+                >
                   Community
                 </Link>
               </li>
               <li>
-                <Link to="/help" className="hover:text-black">
+                <Link
+                  to="https://help.behance.net/hc/en-us"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-black"
+                >
                   Help
                 </Link>
               </li>
+
               <li>
                 <Link to="/personal-info" className="hover:text-black">
                   Do not sell my personal info
@@ -385,9 +391,9 @@ export default function Header() {
         )}
 
         <div className="flex items-center space-x-4">
-          <button className="text-xl text-black hover:opacity-80">
+          <Link to='/explore' className="text-xl text-black hover:opacity-80">
             <FaSearch />
-          </button>
+          </Link>
           <Link
             to="/notification"
             className="text-xl text-black hover:opacity-80"

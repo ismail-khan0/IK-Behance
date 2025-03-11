@@ -40,10 +40,16 @@ const UpgradeToPro = () => {
       </div>
 
       {/* Call-to-Action Buttons */}
-      <div className="mt-6 flex gap-4">
-        <Button className="bg-black hover:bg-gray-800 text-white text-lg px-6 py-2" btnText="Start Free Trial" />
-        <Button className="bg-gray-200 hover:bg-gray-400 text-lg px-6 py-2 " btnText="Compare Plans" />
-      </div>
+      <div className="mt-6 flex flex-col sm:flex-col md:flex-col lg:flex-row gap-4">
+  <Button
+    className="bg-black hover:bg-gray-800 text-white text-base sm:text-base md:text-base lg:text-lg px-4 sm:px-6 py-2"
+    btnText="Start Free Trial"
+  />
+  <Button
+    className="bg-gray-200 hover:bg-gray-400 text-base sm:text-base md:text-base lg:text-lg px-4 sm:px-6 py-2"
+    btnText="Compare Plans"
+  />
+</div>
 
     </div>
   );

@@ -1,7 +1,13 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 
-import { FaInstagram, FaTwitter, FaPinterest, FaFacebook, FaLinkedin } from 'react-icons/fa';
+import {
+  FaInstagram,
+  FaTwitter,
+  FaPinterest,
+  FaFacebook,
+  FaLinkedin,
+} from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -15,47 +21,128 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-3 text-left">Built For Creatives</h3>
             <ul className="space-y-2">
-              <li><Link href="#">Try Behance Pro</Link></li>
-              <li><Link href="#">Find Inspiration</Link></li>
-              <li><Link href="#">Get Hired</Link></li>
-              <li><Link href="#">Sell Creative Assets</Link></li>
-              <li><Link href="#">Sell Freelance Services</Link></li>
+              <li>
+                <Link href="#">Try Behance Pro</Link>
+              </li>
+              <li>
+                <Link href="#">Find Inspiration</Link>
+              </li>
+              <li>
+                <Link href="#">Get Hired</Link>
+              </li>
+              <li>
+                <Link href="#">Sell Creative Assets</Link>
+              </li>
+              <li>
+                <Link href="#">Sell Freelance Services</Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-bold mb-3">Find Talent</h3>
             <ul className="space-y-2">
-              <li><Link href="#">Post a Job</Link></li>
-              <li><Link href="#">Graphic Designers</Link></li>
-              <li><Link href="#">Photographers</Link></li>
-              <li><Link href="#">Video Editors</Link></li>
-              <li><Link href="#">Web Designers</Link></li>
-              <li><Link href="#">Illustrators</Link></li>
+              <li>
+                <Link href="#">Post a Job</Link>
+              </li>
+              <li>
+                <Link href="#">Graphic Designers</Link>
+              </li>
+              <li>
+                <Link href="#">Photographers</Link>
+              </li>
+              <li>
+                <Link href="#">Video Editors</Link>
+              </li>
+              <li>
+                <Link href="#">Web Designers</Link>
+              </li>
+              <li>
+                <Link href="#">Illustrators</Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-bold mb-3">Behance</h3>
             <ul className="space-y-2">
-              <li><Link href="#">About Behance</Link></li>
-              <li><Link href="#">Adobe Portfolio</Link></li>
-              <li><Link href="#">Download the App</Link></li>
-              <li><Link href="#">Blog</Link></li>
-              <li><Link href="#">Careers</Link></li>
-              <li><Link href="#">Help Center</Link></li>
-              <li><Link href="#">Contact Us</Link></li>
+              <li>
+                <Link href="#">About Behance</Link>
+              </li>
+              <li>
+                <Link href="#">Adobe Portfolio</Link>
+              </li>
+              <li>
+                <Link href="#">Download the App</Link>
+              </li>
+              <li>
+                <Link href="#">Blog</Link>
+              </li>
+              <li>
+                <Link href="#">Careers</Link>
+              </li>
+              <li>
+                <Link href="#">Help Center</Link>
+              </li>
+              <li>
+                <Link href="#">Contact Us</Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-bold mb-3">Social</h3>
             <ul className="space-y-2">
-              <li className="flex items-center gap-2"><FaInstagram /><Link href="#">Instagram</Link></li>
-              <li className="flex items-center gap-2"><FaTwitter /><Link href="#">Twitter</Link></li>
-              <li className="flex items-center gap-2"><FaPinterest /><Link href="#">Pinterest</Link></li>
-              <li className="flex items-center gap-2"><FaFacebook /><Link href="#">Facebook</Link></li>
-              <li className="flex items-center gap-2"><FaLinkedin /><Link href="#">LinkedIn</Link></li>
+              <li className="flex items-center gap-2">
+                <FaInstagram />
+                <Link
+                  to="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </Link>
+              </li>
+              <li className="flex items-center gap-2">
+                <FaTwitter />
+                <Link
+                  to="https://twitter.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Twitter
+                </Link>
+              </li>
+              <li className="flex items-center gap-2">
+                <FaPinterest />
+                <Link
+                  to="https://www.pinterest.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Pinterest
+                </Link>
+              </li>
+              <li className="flex items-center gap-2">
+                <FaFacebook />
+                <Link
+                  to="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Facebook
+                </Link>
+              </li>
+              <li className="flex items-center gap-2">
+                <FaLinkedin />
+                <Link
+                  to="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

@@ -13,6 +13,8 @@ import FreelanceProject from './Components/FreelanceProject';
 import PricingPlans from './Components/PricingPlans';
 import Notification from './Components/Notification';
 import ExploreTools from './Components/ExploreTools';
+import About from './Components/About';
+import Blogs from './Components/Blogs';
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           <Route path="/notification" element={<Notification/>} />
           <Route path="/pricing" element={<PricingPlans />} />
           <Route path="/exploretools" element={<ExploreTools />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blogs />} />
           {/* Add more routes as needed */}
         </Routes>
         

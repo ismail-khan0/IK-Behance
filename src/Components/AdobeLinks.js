@@ -15,8 +15,8 @@ const links = [
     id: 2,
     logo: adobe2,
     title: "Get Adobe Express free",
-    description: "https://www.adobe.com/express/?geocheck=on&mv=other&promoid=8WLD4Y3J",
-    link: "#",
+    description: "Quiqe make thoudend of free templates",
+    link: "https://www.adobe.com/express/?geocheck=on&mv=other&promoid=8WLD4Y3J",
   },
   {
     id: 3,
@@ -34,6 +34,7 @@ const AdobeLinks = () => {
         <a
           key={item.id}
           href={item.link}
+          target="_blank"
           className="flex items-center p-4 bg-blue-50 rounded-lg shadow-sm hover:bg-blue-100 transition"
         >
           <img src={item.logo} alt="" className="w-8 h-8 mr-4" />

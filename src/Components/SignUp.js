@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const SignUp = ({ toggle }) => {
+const SignUp = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <h2 className="text-2xl font-semibold text-gray-800 text-center mb-4">
@@ -43,7 +46,10 @@ const SignUp = ({ toggle }) => {
 
       <p className="text-center text-gray-600 mt-4">
         Already have an account?{" "}
-        <button onClick={toggle} className="text-blue-600 hover:underline">
+        <button
+          onClick={() => navigate("/auth?form=login")}
+          className="text-blue-600 hover:underline"
+        >
           Sign in
         </button>
       </p>

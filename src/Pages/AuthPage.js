@@ -1,9 +1,13 @@
-import React, { useState } from "react";
-import SignIn from "../Components/SignUp";
-import SignUp from "../Components/SignIn";
-import backgroundImage from '../images/bg-image.webp'
+import React from "react";
+import { useLocation } from "react-router-dom";
+import SignIn from "../Components/SignIn";
+import SignUp from "../Components/SignUp";
+import backgroundImage from '../images/authBG.avif';
+
 const AuthPage = () => {
-  const [isSignIn, setIsSignIn] = useState(true); // State to toggle between forms
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const isSignIn = queryParams.get("form") !== "signup"; // Default to SignIn
 
   return (
     <div className="relative w-full h-screen flex items-center justify-center">
@@ -21,11 +25,7 @@ const AuthPage = () => {
 
       {/* Auth Container */}
       <div className="relative bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
-        {isSignIn ? (
-          <SignIn toggle={() => setIsSignIn(false)} />
-        ) : (
-          <SignUp toggle={() => setIsSignIn(true)} />
-        )}
+        {isSignIn ? <SignIn /> : <SignUp />}
       </div>
     </div>
   );

@@ -59,29 +59,29 @@ export default function Fibo_Studio() {
       </header>
 
       <div className="relative w-full max-w-5xl my-6">
-        <Videos videos="https://player.vimeo.com/video/1049560529?autoplay=1&loop=1&background=1" className="w-full pb-[55.25%]  aspect-video" />
+        <Videos videos="https://player.vimeo.com/video/1049560529?autoplay=1&loop=1&background=1" className="w-full pb-[56.25%] bg-black  aspect-video" />
         <img src={img1} alt="img1" className="w-full" />
         <img src={img0} alt="img0" className="w-full" />
         <img src={img2} alt="img2" className="w-full" />
         <img src={img3} alt="img3" className="w-full" />
-        <Videos videos="https://player.vimeo.com/video/1048879812?autoplay=1&loop=1&background=1" className="w-full pb-[56%]  aspect-video" />
+        <Videos videos="https://player.vimeo.com/video/1048879812?autoplay=1&loop=1&background=1" className="w-full pb-[56.50%] bg-black aspect-video" />
         <img src={img4} alt="img4" className="w-full" />
         <img src={img5} alt="img5" className="w-full" />
      
-        <Videos videos="https://player.vimeo.com/video/1049552854?autoplay=1&loop=1&background=1" className="w-full pb-[64%]  aspect-video" />
-        <Videos videos="https://player.vimeo.com/video/1049674635?autoplay=1&loop=1&background=1" className="w-full shadow-sm pb-[80.25%]  aspect-video" />
+        <Videos videos="https://player.vimeo.com/video/1049552854?autoplay=1&loop=1&background=1" className="w-full pb-[64%] bg-black  aspect-video" />
+        <Videos videos="https://player.vimeo.com/video/1049674635?autoplay=1&loop=1&background=1" className="w-full shadow-sm pb-[82.20%]   aspect-video" />
         <div className='shadow-sm'>
           <img src={img00} alt="img00" className="w-full" />
         </div>
         <Videos videos="https://player.vimeo.com/video/1049671314?autoplay=1&loop=1&background=1" className="w-full pb-[80.25%]  aspect-video" />
         <Videos videos="https://player.vimeo.com/video/1049677231?autoplay=1&loop=1&background=1" className="w-full pb-[75%] shadow-x  aspect-video" />
-        <Videos videos="https://player.vimeo.com/video/1049671314?autoplay=1&loop=1&background=1" className="w-full pb-[80%] shadow-x  aspect-video" />
-        <Videos videos="https://player.vimeo.com/video/1049552933?autoplay=1&loop=1&background=1" className="w-full pb-[70.25%] shadow-sm  aspect-video" />
-        <Videos videos="https://player.vimeo.com/video/1049552933?autoplay=1&loop=1&background=1" className="w-full pb-[80.25%] shadow-r  aspect-video" />
-        <Videos videos="https://player.vimeo.com/video/1049648830?autoplay=1&loop=1&background=1" className="w-full pb-[70.25%] shadow-sm  aspect-video" />
+        <Videos videos="https://player.vimeo.com/video/1049671314?autoplay=1&loop=1&background=1" className="w-full pb-[79.90%] shadow-x  aspect-video" />
+        <Videos videos="https://player.vimeo.com/video/1049552933?autoplay=1&loop=1&background=1" className="w-full pb-[70.50%] shadow-sm  aspect-video" />
+        <Videos videos="https://player.vimeo.com/video/1049552933?autoplay=1&loop=1&background=1" className="w-full pb-[69.70%] shadow-r  aspect-video" />
+        <Videos videos="https://player.vimeo.com/video/1049648830?autoplay=1&loop=1&background=1" className="w-full pb-[69.50%] shadow-sm  aspect-video" />
         <img src={img6} alt="img6" className="w-full" />
         <img src={img8} alt="img8" className="w-full" />
-        <Videos videos="https://player.vimeo.com/video/1049274679?autoplay=1&loop=1&background=1" className="w-full pb-[19%] shadow-x aspect-video" />
+        <Videos videos="https://player.vimeo.com/video/1049274679?autoplay=1&loop=1&background=1" className="w-full pb-[18%] shadow-x aspect-video" />
         <Videos videos="https://player.vimeo.com/video/1049214649?autoplay=1&loop=1&background=1" className="w-full pb-[10.40%] aspect-video" />
         
  <Consultation/>

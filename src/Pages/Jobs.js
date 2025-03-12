@@ -1,11 +1,12 @@
 import { useState } from "react";
 import JobSearch from "../Components/JobSearch";
-import bg_img from '../images/bg-image.webp';
+import bg_img from '../images/jobBG.webp';
 import codecraft from '../images/Codecraft.jpeg';
 import tech from '../images/technical.jpeg';
 import conzummate from '../images/conzummate_logo.jpeg';
 import JobList from "../Components/JobList";
 import JobSidebar from "../Components/JobSidebar";
+import Footer from "../Components/Footer";
 
 const Jobs = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -148,6 +149,7 @@ const Jobs = () => {
   });
 
   return (
+    <>
     <div className="">
       {/* Integrated Hero Section */}
       <div
@@ -185,6 +187,8 @@ const Jobs = () => {
         </main>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

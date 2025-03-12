@@ -9,11 +9,13 @@ import Notification from "../Components/Notification";
 import { ChevronDown } from "lucide-react";
 import adobe from "../images/adobe.png";
 import AdobeLinks from "../Components/AdobeLinks";
+import DownloadTheApp from "../Components/DownloadTheApp";
 
 export default function Header() {
   const [showSearchInput, setShowSearchInput] = useState(false);
   const [language, setLanguage] = useState("English");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const toggleSearchInput = () => {
     setShowSearchInput(!showSearchInput);
@@ -136,9 +138,12 @@ export default function Header() {
           {/* Hire Freelancers Dropdown */}
           {/* Freelance Projects Dropdown */}
           <div className="relative group flex items-center space-x-1">
-            <button className="hover:text-black font-bold flex items-center gap-2">
+            <Link
+              to="hireFreelancer"
+              className="hover:text-black font-bold flex items-center gap-2"
+            >
               Freelance Projects
-            </button>
+            </Link>
             <ChevronDown size={18} className="mt-1" />
 
             {/* Dropdown Menu */}
@@ -232,17 +237,18 @@ export default function Header() {
 
           {/* Authentication Buttons */}
           <Link
-            to="/auth"
+            to="/auth?form=login"
             className="px-4 py-1 text-blue-600 bg-[rgba(245,248,255)] hover:text-blue-800 border rounded-full"
           >
             Log In
           </Link>
           <Link
-            to="/auth"
-            className="px-4 py-1 items-center text-white bg-blue-600 hover:bg-blue-700 border rounded-full"
-          >
-            Sign Up
-          </Link>
+  to="/auth?form=signup"
+  className="px-4 py-1 items-center text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-700 border rounded-full"
+>
+  Sign Up
+</Link>
+
 
           {/* Adobe Icon */}
           <div className="relative group text-lg font-bold">
@@ -391,7 +397,7 @@ export default function Header() {
         )}
 
         <div className="flex items-center space-x-4">
-          <Link to='/explore' className="text-xl text-black hover:opacity-80">
+          <Link to="/explore" className="text-xl text-black hover:opacity-80">
             <FaSearch />
           </Link>
           <Link
@@ -403,13 +409,14 @@ export default function Header() {
             </button>
           </Link>
 
-          <Link
-            to="/app"
+          <button
+            onClick={() => setShowPopup(true)}
             className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold hover:bg-blue-700"
           >
             Use App
-          </Link>
+          </button>
         </div>
+        <DownloadTheApp showPopup={showPopup} setShowPopup={setShowPopup} />
       </header>
     </>
   );

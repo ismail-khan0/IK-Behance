@@ -1,12 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const SignIn = ({ toggle }) => {
+const SignIn = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <h2 className="text-2xl font-semibold text-gray-800">Sign in</h2>
       <p className="text-sm text-gray-600">
         New user?{" "}
-        <button onClick={toggle} className="text-blue-600 hover:underline">
+        <button
+          onClick={() => navigate("/auth?form=signup")}
+          className="text-blue-600 hover:underline"
+        >
           Create an account
         </button>
       </p>

@@ -9,8 +9,8 @@ import illustration from '../images/freelance/illustration.png'
 import architicture from '../images/freelance/architicture.jpeg'
 import UIUX from '../images/freelance/UIUX.jpeg'
 const tabs = [
-  { name: "Fresco", image: illustration },
-  { name: "Best of Behance", image: architicture },
+  { name: "Best of Behance", image: illustration },
+  { name: "Fresco", image: architicture },
   { name: "Graphic Design", image: graphic },
   { name: "Photography", image: architicture },
   { name: "UI/UX", image: UIUX },

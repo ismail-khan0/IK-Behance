@@ -17,8 +17,8 @@ export default function Expandreach() {
         </h2>
         <Button
   btnText="Start Free Trial"
-  className="w-full sm:w-auto px-4 sm:px-6 py-2 bg-blue-500 mt-4 text-white 
-             sm:bg-green-500 md:bg-yellow-500 lg:bg-purple-500"
+  className="w-full sm:w-auto px-4 sm:px-6 py-2 hover:bg-blue-700 bg-blue-500 mt-4 text-white 
+             sm:bg-green-500 md:bg-yellow-500 lg:bg-blue-600"
 />
       </div>
       <GetWork />

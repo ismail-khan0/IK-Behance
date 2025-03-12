@@ -3,7 +3,7 @@ import UpgradeToPro from "../Components/UpgradeToPro";
 import Button from "../Components/Button";
 import ExpandReach from "../Components/Expandreach";
 import SuccessStories from "../Components/SuccessStories";
-import bg2 from '../images/bg-image.webp';
+import bg2 from '../images/behancBg.jpeg';
 import PricingPage from "../Components/PricingPage";
 import Footer from "../Components/Footer";
 
@@ -26,7 +26,7 @@ const Behance = () => {
             btnText="Start Free Trial" 
             className="bg-white text-black px-6 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-gray-200 w-full sm:w-auto" 
           />
-          <button className="bg-blue-500 text-white px-6 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-gray-700 w-full sm:w-auto mt-4 sm:mt-0">
+          <button className="bg-blue-500 text-white px-6 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-blue-700 w-full sm:w-auto mt-4 sm:mt-0">
             Compare Plans
           </button>
         </div>

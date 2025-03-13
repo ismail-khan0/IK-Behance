@@ -81,7 +81,7 @@ export default function PricingPage() {
           </ul>
           <Button
             btnText="Start your free trial"
-             to="/pricing-plans"
+            onClick={()=>window.location.href='pricing'}
             className="mt-6 w-full bg-blue-500 text-white py-2  font-semibold hover:bg-blue-600"
           />
         </div>

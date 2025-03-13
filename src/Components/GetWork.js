@@ -52,6 +52,7 @@ export default function GetWork() {
   </div>
   <Button
     btnText="Start Free Trial"
+    onClick={()=>window.location.href='/pricing'}
     className="bg-white text-blue-600 font-semibold px-4 sm:px-6 py-2 rounded-full shadow-md mt-6 lg:mt-0 text-sm sm:text-base"
   />
 </div>

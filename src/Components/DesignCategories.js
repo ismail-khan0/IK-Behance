@@ -41,7 +41,7 @@ const categories = [
             ))}
           </div>
           <div className="flex justify-center mt-8">
-            <button className="bg-white text-black font-medium px-6 py-2 rounded-full border border-black hover:bg-black hover:text-white transition-all">
+            <button onClick={()=>window.location.href='/jobs'} className="bg-white text-blue-500 font-medium px-6 py-2 rounded-full border border-gray-400 hover:bg-black hover:text-white transition-all">
               Browse All Categories
             </button>
           </div>

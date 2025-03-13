@@ -1,5 +1,6 @@
 import React from 'react';
 import bgimage from '../images/bg-image.webp'
+import { Link } from 'react-router-dom';
 const tools = [
   { name: 'Photoshop', icon: 'Ps', bg: 'bg-gray-800', image: bgimage },
   { name: 'Illustrator', icon: 'Ai', bg: 'bg-orange-600', image: bgimage },
@@ -12,7 +13,8 @@ export default function Tools() {
   return (
     <div className="p-4 rounded-lg shadow-md my-2">
       <h3 className="font-semibold text-gray-700 mb-3">TOOLS</h3>
-      <div className="space-y-2">
+      <Link to="/explore">
+      <div className="space-y-2" >
         {tools.map((tool, index) => (
           <div 
             key={index} 
@@ -30,6 +32,7 @@ export default function Tools() {
           </div>
         ))}
       </div>
+      </Link>
       <p className="text-gray-600 text-sm mt-3">
         Figma, Adobe Photoshop, Figma
       </p>

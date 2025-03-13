@@ -9,7 +9,9 @@ const PricingPlans = () => {
     { id: "yearlyMonthly", name: "Yearly", subtext: "Billed monthly", price: "US$9.99/mo (US$119.88/yr)", description: "Fee applies if you cancel after Mar 30" },
     { id: "yearlyUpfront", name: "Yearly", subtext: "Billed upfront", price: "US$95.88/yr (US$7.99/mo)", description: "No refund if you cancel after Mar 30" },
   ];
-
+const submited=()=>{
+  alert("Successfuly subscrib the behance pro ")
+}
   return (
     <div className="flex justify-center items-center min-h-screen bg-white p-4 mt-16">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-5xl w-full border">
@@ -36,7 +38,7 @@ const PricingPlans = () => {
           ))}
         </div>
         
-        <Button btnText='Continue' className="w-full bg-blue-600 text-white py-2 hover:bg-blue-700 text-lg"/>
+        <Button onClick={submited} btnText='Continue' className="w-full bg-blue-600 text-white py-2 hover:bg-blue-700 text-lg"/>
         
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
           <div>

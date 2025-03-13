@@ -3,7 +3,7 @@ import hireMe from "../images/hire-landing-why.webp";
 import { FaMagic, FaRulerCombined, FaLock, FaRocket } from "react-icons/fa";
 import Button from "./Button";
 
-const HireSection = () => {
+const HireSection = ({setProjects}) => {
   return (
     <section className="flex flex-col md:flex-row items-center justify-between px-4 sm:px-8 md:px-20 py-12 bg-gray-50">
       {/* Left Text Section */}
@@ -52,11 +52,13 @@ const HireSection = () => {
         <div className="mt-6 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
           <Button
             btnText="Get Started"
-            className="bg-blue-600 text-white px-6 py-2 font-semibold"
+            onClick={setProjects}
+            className="bg-blue-500 hover:bg-blue-700 text-white px-6 py-2 font-semibold"
           />
           <Button
             btnText="Browse Freelancers"
-            className="border border-gray-400 px-6 py-2 font-semibold text-gray-900"
+            onClick={()=>window.location.href='/jobs'}
+            className="border border-gray-400 px-6 py-2 font-semibold hover:bg-black hover:text-black"
           />
         </div>
       </div>

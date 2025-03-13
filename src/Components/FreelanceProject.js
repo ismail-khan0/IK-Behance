@@ -1,4 +1,5 @@
 import { FaClipboardList, FaUserCheck, FaLock } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const FreelanceProject = () => {
   return (
@@ -52,7 +53,7 @@ const FreelanceProject = () => {
 
       {/* CTA Button */}
       <button className="mt-8 bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-blue-700 transition">
-        Create a Freelance Project
+      <Link to="/auth"> Create a Freelance Project</Link> 
       </button>
     </div>
   );

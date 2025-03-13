@@ -1,7 +1,7 @@
 import { FaClipboardCheck, FaUsers, FaLock } from "react-icons/fa";
 import Hire_Landing from '../images/hire-landing-how-1.webp'
 import Button from "./Button";
-const HiringonBehance = () => {
+const HiringonBehance = ({setProjects}) => {
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col items-center py-10 ">
       {/* Heading Section */}
@@ -55,7 +55,7 @@ const HiringonBehance = () => {
       </div>
 
       {/* Get Started Button */}
-      <Button btnText="Get Started" className="mt-6 bg-blue-600 text-white px-6 py-2  font-semibold"/>
+      <Button onClick={setProjects} btnText="Get Started" className="mt-6 bg-blue-600 text-white px-6 py-2  font-semibold"/>
       </div>
     </div>
   );

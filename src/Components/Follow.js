@@ -1,14 +1,34 @@
-import React from 'react';
-import ik_img from '../images/ik-img.jpeg'
-import Fibo_Studio from '../images/fibo_studio_logo.jpeg'
+import { useState } from "react";
+import ik_img from "../images/ik-img.jpeg";
+import Fibo_Studio from "../images/fibo_studio_logo.jpeg";
+
 const owners = [
-  { name: "Ismail Khan", country: "Pakistan", img:ik_img  },
-  { name: "Fibo Studio", country: "Pakistan", img: Fibo_Studio }
+  { name: "Ismail Khan", country: "Pakistan", img: ik_img },
+  { name: "Fibo Studio", country: "Pakistan", img: Fibo_Studio },
 ];
 
+// Follow Button Component
+function FollowButton() {
+  const [isFollowing, setIsFollowing] = useState(false);
+
+  return (
+    <button
+      onClick={() => setIsFollowing(!isFollowing)}
+      className={`px-3 py-1 text-xs font-medium border rounded-full transition ${
+        isFollowing
+          ? "bg-gray-200 text-gray-700 border-gray-400"
+          : "bg-blue-600 text-white border-blue-600 hover:bg-blue-800"
+      }`}
+    >
+      {isFollowing ? "Following" : "Follow"}
+    </button>
+  );
+}
+
+// Main Component
 export default function Follow() {
   return (
-    <div className="mb-6 p-4  bg-white rounded-lg shadow text-left">
+    <div className="mb-6 p-4 bg-white rounded-lg shadow text-left">
       <p className="font-semibold text-gray-700 mb-3 text-xs">OWNERS</p>
       <div className="space-y-4">
         {owners.map((owner, index) => (
@@ -20,9 +40,8 @@ export default function Follow() {
                 <p className="text-sm text-gray-500">{owner.country}</p>
               </div>
             </div>
-            <button className="px-3 py-1 text-xs text-white font-medium border border-blue-600 bg-blue-600 rounded-full hover:bg-blue-800">
-              Follow
-            </button>
+            {/* Follow Button for each owner */}
+            <FollowButton />
           </div>
         ))}
       </div>

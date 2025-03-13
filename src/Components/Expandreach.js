@@ -16,6 +16,7 @@ export default function Expandreach() {
           Get your work seen by more clients and collaborators
         </h2>
         <Button
+        onClick={()=>window.location.href='/pricing'}
   btnText="Start Free Trial"
   className="w-full sm:w-auto px-4 sm:px-6 py-2 hover:bg-blue-700 bg-blue-500 mt-4 text-white 
              sm:bg-green-500 md:bg-yellow-500 lg:bg-blue-600"

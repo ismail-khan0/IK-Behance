@@ -18,6 +18,8 @@ import Blogs from './Components/Blogs';
 import DownloadTheApp from './Components/DownloadTheApp';
 import ContactUs from './Components/ContactUs';
 import HelpUs from './Components/HelpUs';
+import JobPostingForm from './Components/JobPostingForm';
+import ShareProjectModal from './Components/ShareProjectModal';
 
 function App() {
   return (
@@ -41,6 +43,8 @@ function App() {
           <Route path="/downloadtheapp" element={<DownloadTheApp/>} />
           <Route path="/contactus" element={<ContactUs/>} />
           <Route path="/helpus" element={<HelpUs/>} />
+          <Route path="/postingjob" element={<JobPostingForm/>} />
+          <Route path="/shareproject" element={<ShareProjectModal/>} />
           {/* Add more routes as needed */}
         </Routes>
         

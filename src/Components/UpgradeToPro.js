@@ -3,7 +3,7 @@ import Card_Behance from "./Card_Behance";
 import Button from "./Button";
 import { TrendingUp, DollarSign, Sparkles } from 'lucide-react'; // Import Lucide icons
 
-const UpgradeToPro = () => {
+const UpgradeToPro = ({scrollToPricing}) => {
   return (
     <div className="flex flex-col items-center justify-center p-10 my-8">
       <h1 className="text-5xl font-bold text-center mb-10">Why upgrade to Pro?</h1>
@@ -44,10 +44,12 @@ const UpgradeToPro = () => {
   <Button
     className="bg-black hover:bg-gray-800 text-white text-base sm:text-base md:text-base lg:text-lg px-4 sm:px-6 py-2"
     btnText="Start Free Trial"
+    onClick={() => window.location.href = '/pricing'}
   />
   <Button
     className="bg-gray-200 hover:bg-gray-400 text-base sm:text-base md:text-base lg:text-lg px-4 sm:px-6 py-2"
     btnText="Compare Plans"
+    onClick={scrollToPricing}
   />
 </div>
 

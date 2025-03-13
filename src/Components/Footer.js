@@ -39,7 +39,7 @@ export default function Footer() {
             <h3 className="font-bold mb-3">Find Talent</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="jobs">Post a Job</Link>
+                <Link to="/jobs">Post a Job</Link>
               </li>
               <li>
                 <Link to="/exploretools?tab=Graphic%20Design">Graphic Designers</Link>

@@ -12,6 +12,9 @@ import HeroSection from "../Components/HeroSection";
 const HireFreelancer = () => {
   // State to track selected component (Initially, nothing is selected)
   const [activeComponent, setActiveComponent] = useState("hiringBehance");
+  const setProjects=()=>{
+    setActiveComponent("freelanceProjects")
+  }
 
   return (
     <>
@@ -76,10 +79,10 @@ const HireFreelancer = () => {
       {activeComponent === "findCreatives" && <Jobs />}
       {activeComponent === "hiringBehance" && (
         <>
-          <HeroSection />
+          <HeroSection freelanceProjects={setProjects} />
           <DesignCategories />
-          <HireSection />
-          <HiringonBehance />
+          <HireSection setProjects={setProjects}/>
+          <HiringonBehance setProjects={setProjects} />
           <Footer />
         </>
       )}

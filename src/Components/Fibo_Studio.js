@@ -42,7 +42,7 @@ export default function Fibo_Studio() {
   ];
   return (
     <div className="bg-white min-h-screen flex flex-col items-center">
-      <header className="w-full pt-4 flex items-center justify-between max-w-5xl">
+      <header className="w-full pt-4 flex items-center justify-between max-w-6xl">
         <div className="flex items-center space-x-3">
           <img
             src={ik_img}
@@ -58,7 +58,7 @@ export default function Fibo_Studio() {
         </div>
       </header>
 
-      <div className="relative w-full max-w-7xl my-6">
+      <div className="relative w-full max-w-6xl my-6">
         <Videos videos="https://player.vimeo.com/video/1049560529?autoplay=1&loop=1&background=1" className="w-full pb-[56.25%] bg-black  aspect-video" />
         <img src={img1} alt="img1" className="w-full" />
         <img src={img0} alt="img0" className="w-full" />

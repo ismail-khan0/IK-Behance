@@ -41,7 +41,7 @@ export default function Fibo_Studio() {
     "food donation"
   ];
   return (
-    <div className="bg-white min-h-screen flex flex-col items-center ">
+    <div className="bg-white min-h-screen  flex flex-col items-center ">
       <header className="w-full pt-4 flex items-center justify-between px-4">
         <div className="flex items-center space-x-3">
           <img
@@ -50,7 +50,7 @@ export default function Fibo_Studio() {
             className="w-10 h-10 rounded-full"
           />
           <div>
-            <h1 className="text-lg font-semibold">
+            <h1 className="text-lg font-semibold text-left">
               Fudo - Food Share App Reducing Food Waste | Fibo Studio
             </h1>
             <p className="text-sm text-gray-500 text-left">Multiple Owners • Follow All</p>

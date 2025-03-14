@@ -17,7 +17,7 @@ export default function Sidebar() {
   return (
     <>
       {/* Sidebar for Large Screens (lg and above) */}
-      <div className="hidden lg:flex flex-col fixed right-1 top-28 space-y-4">
+      <div className="hidden lg:flex flex-col fixed right-8 top-28 space-y-4">
         {/* Profile Image and Follow Button */}
         <div
           className="relative w-10 h-10 right-[-10px] mb-8"

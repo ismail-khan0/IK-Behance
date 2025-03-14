@@ -17,7 +17,7 @@ export default function Sidebar() {
   return (
     <>
       {/* Sidebar for Large Screens (lg and above) */}
-      <div className="hidden lg:flex flex-col fixed right-4 top-28 space-y-4">
+      <div className="hidden lg:flex flex-col fixed right-[0px] top-28 space-y-4">
         {/* Profile Image and Follow Button */}
         <div
           className="relative w-10 h-10 right-[-10px] mb-8"
@@ -128,9 +128,9 @@ export default function Sidebar() {
           </button>
           <span className="text-xs text-blue-600">Appreciate</span>
           {showAppreciate && (
-  <div className="absolute bottom-20 -translate-x-full bg-white w-[px] shadow-lg rounded-lg mb-4">
+  <div className="absolute bottom-20 -translate-x-full bg-white w-[px] shadow-lg rounded-lg ">
 
-    <SocialAuthButtons />
+    <SocialAuthButtons className="text-xl"/>
   </div>
 )}
 

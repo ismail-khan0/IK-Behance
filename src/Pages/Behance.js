@@ -3,7 +3,7 @@ import UpgradeToPro from "../Components/UpgradeToPro";
 import Button from "../Components/Button";
 import ExpandReach from "../Components/Expandreach";
 import SuccessStories from "../Components/SuccessStories";
-import bg2 from '../images/behancBg.jpeg';
+import bg2 from '../images/behanceImg.jpg';
 import PricingPage from "../Components/PricingPage";
 import Footer from "../Components/Footer";
 

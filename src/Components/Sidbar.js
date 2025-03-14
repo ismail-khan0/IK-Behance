@@ -17,14 +17,18 @@ export default function Sidebar() {
   return (
     <>
       {/* Sidebar for Large Screens (lg and above) */}
-      <div className="hidden lg:flex flex-col fixed right-[0px] top-28 space-y-4">
+      <div className="hidden lg:flex flex-col fixed right-4 top-28 space-y-4">
         {/* Profile Image and Follow Button */}
         <div
           className="relative w-10 h-10 right-[-10px] mb-8"
           onMouseEnter={() => setShowFollow(true)}
           onMouseLeave={() => setShowFollow(false)}
         >
-          <img src={img11} alt="Profile" className="w-10 h-10 rounded-full border" />
+          <img
+            src={img11}
+            alt="Profile"
+            className="w-10 h-10 rounded-full border"
+          />
           <button
             className="absolute bottom-0 right-[-2px] bg-blue-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs border"
             aria-label="Follow"
@@ -46,7 +50,11 @@ export default function Sidebar() {
           onMouseEnter={() => setShowTools(true)}
           onMouseLeave={() => setShowTools(false)}
         >
-          <button className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-gray-200" aria-label="Tools" title="Tools">
+          <button
+            className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-gray-200"
+            aria-label="Tools"
+            title="Tools"
+          >
             <SiAdobephotoshop />
           </button>
           <span className="text-sm">Tools</span>
@@ -59,31 +67,40 @@ export default function Sidebar() {
 
         {/* Save Section */}
         <div className="flex flex-col items-center">
-          <Link to='/auth'>
-          <button className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-gray-200" aria-label="Save" title="Save">
-            <FaFolder />
-          </button>
-          <span className="text-sm">Save</span>
+          <Link to="/auth">
+            <button
+              className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-gray-200"
+              aria-label="Save"
+              title="Save"
+            >
+              <FaFolder />
+            </button>
+            <span className="text-sm">Save</span>
           </Link>
         </div>
 
         {/* Share Section */}
         <div className="flex flex-col items-center">
-          <button className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-gray-200" aria-label="Share" title="Share" onClick={() => setIsOpen(true)}>
+          <button
+            className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-gray-200"
+            aria-label="Share"
+            title="Share"
+            onClick={() => setIsOpen(true)}
+          >
             <FaUpload />
           </button>
           <span className="text-sm">Share</span>
         </div>
 
         {/* Appreciate Section */}
-        <div 
+        <div
           className="flex flex-col items-center relative"
           onMouseEnter={() => setShowAppreciate(true)}
           onMouseLeave={() => setShowAppreciate(false)}
         >
-          <button 
-            className="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full hover:bg-blue-700" 
-            aria-label="Appreciate" 
+          <button
+            className="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full hover:bg-blue-700"
+            aria-label="Appreciate"
             title="Appreciate"
           >
             <FaThumbsUp />
@@ -108,32 +125,31 @@ export default function Sidebar() {
           <FaFolder className="text-xl" />
           <span className="text-xs">Save</span>
         </button>
-        <button onClick={() => setIsOpen(true)} className="flex flex-col items-center text-gray-600 hover:text-black">
+        <button
+          onClick={() => setIsOpen(true)}
+          className="flex flex-col items-center text-gray-600 hover:text-black"
+        >
           <FaUpload className="text-xl" />
           <span className="text-xs">Share</span>
         </button>
-        
+
         {/* Appreciate Section in Bottom Navbar */}
-        <div 
+        <div
           className="flex flex-col items-center relative"
           onMouseEnter={() => setShowAppreciate(true)}
           onMouseLeave={() => setShowAppreciate(false)}
         >
-          <button 
-            className="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full hover:bg-blue-700" 
-            aria-label="Appreciate" 
-            title="Appreciate"
-          >
-            <FaThumbsUp />
+          {/* Appreciate Section in Bottom Navbar */}
+          <button className="flex flex-col items-center text-gray-600 hover:text-black">
+            <FaThumbsUp className="text-xl" />
+            <span className="text-xs">Appreciate</span>
           </button>
-          <span className="text-xs text-blue-600">Appreciate</span>
+
           {showAppreciate && (
-  <div className="absolute bottom-20 -translate-x-full bg-white w-[px] shadow-lg rounded-lg ">
-
-    <SocialAuthButtons className="text-xl"/>
-  </div>
-)}
-
+            <div className="absolute bottom-20 -translate-x-full bg-white w-[px] shadow-lg rounded-lg ">
+              <SocialAuthButtons className="text-xl" />
+            </div>
+          )}
         </div>
       </div>
 

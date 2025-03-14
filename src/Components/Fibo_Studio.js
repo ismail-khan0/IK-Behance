@@ -58,7 +58,7 @@ export default function Fibo_Studio() {
         </div>
       </header>
 
-      <div className="relative w-full max-w-5xl my-6">
+      <div className="relative w-full max-w-7xl my-6">
         <Videos videos="https://player.vimeo.com/video/1049560529?autoplay=1&loop=1&background=1" className="w-full pb-[56.25%] bg-black  aspect-video" />
         <img src={img1} alt="img1" className="w-full" />
         <img src={img0} alt="img0" className="w-full" />

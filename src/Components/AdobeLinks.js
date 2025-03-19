@@ -2,7 +2,7 @@ import React from "react";
 import adobe from '../images/adobe.png'
 import adobe2 from '../images/adobe2.jpeg'
 import ik from '../images/ik.png'
-import  PricingPlans from './PricingPlans'
+
 const links = [
   {
     id: 1,

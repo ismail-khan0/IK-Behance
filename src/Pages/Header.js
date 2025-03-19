@@ -243,12 +243,11 @@ export default function Header() {
             Log In
           </Link>
           <Link
-  to="/auth?form=signup"
-  className="px-4 py-1 items-center text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-700 border rounded-full"
->
-  Sign Up
-</Link>
-
+            to="/auth?form=signup"
+            className="px-4 py-1 items-center text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-700 border rounded-full"
+          >
+            Sign Up
+          </Link>
 
           {/* Adobe Icon */}
           <div className="relative group text-lg font-bold">

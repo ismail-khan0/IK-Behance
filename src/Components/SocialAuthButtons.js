@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 const SocialAuthButtons = () => {
   return (
-    <div className="flex flex-col items-center gap-3 my-4 p-4">
+    <div className="flex flex-col items-center gap-3 my-4 p-4 ">
       {/* Text */}
-      <p className="text-gray-700 text-center">
-        <strong className="text-black">
+      <p className="text-gray-700 text-center text-left">
+        <strong className="text-black text-left">
           <Link to="/auth"> Sign up </Link>
         </strong>{" "}
         or{" "}
-        <strong className="text-black">
+        <strong className="text-black text-left">
           <Link to="/auth"> Sign in </Link>
         </strong>{" "}
         to your account to view more work personalized to your preferences.

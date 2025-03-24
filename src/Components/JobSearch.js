@@ -1,10 +1,14 @@
+import { useContext } from "react";
 import Input from "../Components/Input";
+import { JobContext } from "../Context/JobContext";
 
-const JobSearch = ({ searchQuery, setSearchQuery, jobCount, selectedCategory }) => {
+const JobSearch = () => {
+  const { searchQuery, setSearchQuery, filteredJobs, selectedCategory } = useContext(JobContext);
+
   return (
     <div className="flex flex-col sm:flex-row justify-between items-center mb-4 w-full my-0 lg:my-2">
       <h1 className="text-xl font-bold mb-2 sm:mb-0">
-        {selectedCategory} Jobs ({jobCount})
+        {selectedCategory} Jobs ({filteredJobs.length}) {/* Display filtered jobs */}
       </h1>
       <Input
         placeholder={`Search ${selectedCategory} Jobs...`}

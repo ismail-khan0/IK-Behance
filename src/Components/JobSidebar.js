@@ -1,15 +1,26 @@
-import { useState } from "react";
-import JobPostingModal from "./JobPostingForm";
+// Components/JobSidebar.js
+import { useContext, useState } from "react";
+import { JobContext } from "../Context/JobContext";
+import JobPostingForm from "./JobPostingForm";
 
-
-const JobSidebar = ({ categories, selectedCategory, setSelectedCategory, isSidebarOpen }) => {
+const JobSidebar = () => {
+  const { 
+    categories, 
+    selectedCategory, 
+    setSelectedCategory, 
+    isSidebarOpen,
+    addJob 
+  } = useContext(JobContext);
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
       <aside className={`${isSidebarOpen ? "block" : "hidden"} sm:block w-full sm:w-72 p-4 border-r`}>
-        <button onClick={() => setIsModalOpen(true)}
-          className="bg-blue-600 text-white w-full py-2 rounded-full flex items-center justify-center font-semibold text-lg">
+        <button 
+          onClick={() => setIsModalOpen(true)}
+          className="bg-blue-600 text-white w-full py-2 rounded-full flex items-center justify-center font-semibold text-lg"
+        >
           <span className="mr-2 text-xl">+</span> New Job
         </button>
 
@@ -18,10 +29,15 @@ const JobSidebar = ({ categories, selectedCategory, setSelectedCategory, isSideb
           <ul className="mt-2 space-y-2">
             {categories.map((cat) => (
               <li key={cat.label} className="flex items-center space-x-2">
-                <input type="radio" name="category" id={cat.label} value={cat.label}
+                <input 
+                  type="radio" 
+                  name="category" 
+                  id={cat.label} 
+                  value={cat.label}
                   checked={selectedCategory === cat.label}
                   onChange={() => setSelectedCategory(cat.label)}
-                  className="accent-blue-600" />
+                  className="accent-blue-600" 
+                />
                 <label htmlFor={cat.label} className="cursor-pointer">{cat.label}</label>
               </li>
             ))}
@@ -29,7 +45,13 @@ const JobSidebar = ({ categories, selectedCategory, setSelectedCategory, isSideb
         </div>
       </aside>
 
-      {isModalOpen && <JobPostingModal closeModal={() => setIsModalOpen(false)} categories={categories} />}
+      {isModalOpen && (
+        <JobPostingForm 
+          closeModal={() => setIsModalOpen(false)} 
+          categories={categories}
+          onJobAdded={addJob}
+        />
+      )}
     </>
   );
 };
